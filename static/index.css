@@ -1,0 +1,20 @@
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust based on navbar height */
+}
+
+video {
+    width: 80%;
+    max-width: 80vw;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+body {
+    padding-top: 80px; /* Pushes everything below the navbar */
+}

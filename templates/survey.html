@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/survey.css" />
+  </head>
+  <body>
+    <div class="formbold-main-wrapper">
+      <!-- Author: FormBold Team -->
+      <!-- Learn More: https://formbold.com -->
+      <div class="formbold-form-wrapper">
+        <img
+          src="{{ url_for('static', filename='survey.png') }}"
+          alt="Survey Image"
+          class="img-fluid"
+        />
+
+        <form action="https://formbold.com/s/FORM_ID" method="POST">
+          <div class="formbold-input-group">
+            <label for="name" class="formbold-form-label"> Name </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+              class="formbold-form-input"
+            />
+          </div>
+
+          <div class="formbold-input-group">
+            <label for="age" class="formbold-form-label"> Age </label>
+            <input
+              type="text"
+              name="age"
+              id="age"
+              placeholder="Enter your age"
+              class="formbold-form-input"
+            />
+          </div>
+          
+
+          <div class="formbold-input-group">
+            <label class="formbold-form-label"> Select your Category </label>
+
+            <select
+              class="formbold-form-select"
+              name="occupation"
+              id="occupation"
+            >
+              <option value="IT Professional">IT Professional</option>
+              <option value="Business Owner">Business Owner</option>
+              <option value="Government Official">Government Official</option>
+              <option value="Athlete">Athlete</option>
+            </select>
+          </div>
+
+
+          <div class="formbold-input-radio-wrapper">
+            <label class="formbold-form-label">
+              Primary Concerns
+            </label>
+
+            <div class="formbold-radio-flex">
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="Stress & Sleep Issues">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="Stress & Sleep Issues"
+                    id="Stress & Sleep Issues"
+                  />
+                  Stress & Sleep Issues
+
+
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="Skin & Hair Aging">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="Skin & Hair Aging"
+                    id="Skin & Hair Aging"
+                  />
+                  Skin & Hair Aging
+
+
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="Hormonal Balance">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="Hormonal Balance"
+                    id="Hormonal Balance"
+                  />
+                  Hormonal Balance
+
+
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="Joint & Muscle Recovery">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="Joint & Muscle Recovery"
+                    id="Joint & Muscle Recovery"
+                  />
+                  Joint & Muscle Recovery
+
+
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="Energy & Cognitive Function">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="Energy & Cognitive Function"
+                    id="Energy & Cognitive Function"
+                  />
+                  Energy & Cognitive Function
+
+
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+
+
+
+          
+        
+
+          <!-- daily routine -->
+          <div class="formbold-input-group">
+            <h3 class="formbold-subheading">Daily Routine Assesment</h3>
+            <!-- Subheading -->
+
+            <div class="formbold-input-group">
+              <label class="formbold-form-label"
+                >How many hours do you sleep?</label
+              >
+              <select
+                class="formbold-form-select"
+                name="sleep_hours"
+                id="sleep_hours"
+              >
+                <option value="Less than 5">Less than 5</option>
+                <option value="5-6">5-6</option>
+                <option value="6-7">6-7</option>
+                <option value="More than 7">More than 7</option>
+              </select>
+            </div>
+
+            <div class="formbold-input-group">
+              <label class="formbold-form-label"
+                >How many hours do you work daily?</label
+              >
+              <select
+                class="formbold-form-select"
+                name="work_hours"
+                id="work_hours"
+              >
+                <option value="Less than 8">Less than 8</option>
+                <option value="8-10">8-10</option>
+                <option value="10-12">10-12</option>
+                <option value="More than 12">More than 12</option>
+              </select>
+            </div>
+
+            <div class="formbold-input-group">
+              <label class="formbold-form-label"
+                >How many hours do you spend sitting?</label
+              >
+              <select
+                class="formbold-form-select"
+                name="sitting_hours"
+                id="sitting_hours"
+              >
+                <option value="Less than 3">Less than 3</option>
+                <option value="3-6">3-6</option>
+                <option value="6-9">6-9</option>
+                <option value="More than 9">More than 9</option>
+              </select>
+            </div>
+
+            <div class="formbold-input-group">
+              <label class="formbold-form-label"
+                >Do you exercise regularly?</label
+              >
+              <select
+                class="formbold-form-select"
+                name="exercise_habit"
+                id="exercise_habit"
+              >
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Occasionally">Occasionally</option>
+              </select>
+            </div>
+
+            <div class="formbold-input-group">
+              <label class="formbold-form-label"
+                >Do you take supplements?</label
+              >
+              <select
+                class="formbold-form-select"
+                name="take_supplements"
+                id="take_supplements"
+              >
+                
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Open to it">Open to it</option>
+              </select>
+            </div>
+          </div>
+
+
+
+          <div class="formbold-input-group">
+            <h3 class="formbold-subheading">Nutritional Habits</h3>
+            <label class="formbold-form-label">
+                Dietary Preference:
+            </label>
+            <select class="formbold-form-select" name="dietary_preference" id="dietary_preference">
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Keto">Keto</option>
+            </select>
+        </div>
+        
+        <div class="formbold-input-group">
+            <label class="formbold-form-label">
+                Do you consume alcohol?
+            </label>
+            <select class="formbold-form-select" name="alcohol_consumption" id="alcohol_consumption">
+                <option value="Never">Never</option>
+                <option value="Occasionally">Occasionally</option>
+                <option value="Frequently">Frequently</option>
+            </select>
+        </div>
+        
+        <div class="formbold-input-group">
+            <label class="formbold-form-label">
+                How much water do you drink daily?
+            </label>
+            <select class="formbold-form-select" name="water_intake" id="water_intake">
+                <option value="Less than 1L">Less than 1L</option>
+                <option value="1-2L">1-2L</option>
+                <option value="More than 2L">More than 2L</option>
+            </select>
+        </div>
+
+
+
+        <div class="formbold-input-radio-wrapper">
+            <label class="formbold-form-label">
+                Biohacking & Recovery Preferences 
+            </label>
+
+            <div class="formbold-radio-flex">
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="Cryotherapy">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="Cryotherapy"
+                    id="Cryotherapy"
+                  />
+                  Cryotherapy
+
+
+
+
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="Hyperbaric Oxygen Therapy">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="Hyperbaric Oxygen Therapy"
+                    id="Hyperbaric Oxygen Therapy"
+                  />
+                  Hyperbaric Oxygen Therapy
+
+
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="Red Light Therapy">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="Red Light Therapy"
+                    id="Red Light Therapy"
+                  />
+                  Red Light Therapy
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="Sauna & Steam">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="Sauna & Steam"
+                    id="Sauna & Steam"
+                  />
+                  Sauna & Steam
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="Cold Plunge">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="Cold Plunge"
+                    id="Cold Plunge"
+                  />
+                  Cold Plunge
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+              <div class="formbold-radio-group">
+                <label class="formbold-radio-label" for="IV Drips & Supplementation">
+                  <input
+                    class="formbold-input-radio"
+                    type="radio"
+                    name="IV Drips & Supplementation"
+                    id="IV Drips & Supplementation"
+                  />
+                  IV Drips & Supplementation
+                  <span class="formbold-radio-checkmark"></span>
+                </label>
+              </div>
+        
+
+        
+        
+
+          
+
+              
+             
+
+              
+
+              
+
+          <div>
+            <label for="message" class="formbold-form-label">
+              Any comments or suggestions
+            </label>
+            <textarea
+              rows="6"
+              name="message"
+              id="message"
+              placeholder="Type here..."
+              class="formbold-form-input"
+            ></textarea>
+          </div>
+
+          <button class="formbold-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
