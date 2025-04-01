@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Wellness Products</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      
+      body {
+        background-color: #f5f5f5;
+      }
+      
+      .product-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+        color: white;
+        margin-top: 100px;
+      }
+      
+      .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      
+      .section-header h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      
+      .section-header p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+      
+      .product-carousel-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .product-carousel {
+        display: flex;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+      }
+      
+      .product {
+        display: none;
+        flex-shrink: 0;
+        width: 100%;
+        padding: 40px;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      
+      .product.active {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 1;
+        transform: translateX(0);
+      }
+      
+      .product-image-container {
+        width: 45%;
+        position: relative;
+      }
+      
+      .product-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+      
+      .product-image:hover {
+        transform: scale(1.05);
+      }
+      
+      .product-details {
+        width: 50%;
+        padding: 20px;
+      }
+      
+      .product-details h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+      
+      .product-details h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: #fdbb2d;
+        border-radius: 2px;
+      }
+      
+      .product-details p {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+      }
+      
+      .product-price {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #fdbb2d;
+      }
+      
+      .product-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: #fdbb2d;
+        color: #1a2a6c;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+      
+      .product-btn:hover {
+        background: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .carousel-controls {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 15px;
+      }
+      
+      .carousel-arrow {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid white;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .carousel-arrow:hover {
+        background: white;
+        color: #1a2a6c;
+      }
+      
+      .carousel-dots {
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .dot.active {
+        background: white;
+        transform: scale(1.2);
+      }
+      
+      @media (max-width: 768px) {
+        .product.active {
+          flex-direction: column;
+        }
+        
+        .product-image-container,
+        .product-details {
+          width: 100%;
+        }
+        
+        .product-image-container {
+          margin-bottom: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="product-section">
+      <div class="section-header">
+        <h1>Premium Wellness Products</h1>
+        <p>Discover our exclusive collection of cutting-edge wellness technology designed to transform your health and lifestyle</p>
+      </div>
+      
+      <div class="product-carousel-container">
+        <div class="product-carousel">
+          <div class="product active">
+            <div class="product-image-container">
+              <img src="static/prod1.jpg" alt="Cryotherapy Chamber" class="product-image" />
+            </div>
+            <div class="product-details">
+              <h2>The Ultimate Cryotherapy Solution</h2>
+              <p>Cryosessions are taking the wellness industry by storm, offering clients a cutting-edge way to enhance their health and appearance. By incorporating whole-body cryotherapy into your business—whether it's a wellness center, gym, or beauty studio—you can attract new customers and boost your revenue.</p>
+              <div class="product-price">$12,999</div>
+              <a href="#" class="product-btn">Learn More</a>
+            </div>
+          </div>
+          
+          <div class="product">
+            <div class="product-image-container">
+              <img src="static/prod2.jpg" alt="Hyperbaric Chamber" class="product-image" />
+            </div>
+            <div class="product-details">
+              <h2>Advanced Hyperbaric Chamber</h2>
+              <p>Our state-of-the-art hyperbaric chamber provides a unique therapeutic experience, promoting faster recovery and improved health. Ideal for athletes, wellness enthusiasts, and medical facilities looking to expand their treatment options.</p>
+              <div class="product-price">$15,499</div>
+              <a href="#" class="product-btn">Learn More</a>
+            </div>
+          </div>
+          
+          <div class="product">
+            <div class="product-image-container">
+              <img src="static/prod3.jpg" alt="Red Light Therapy Device" class="product-image" />
+            </div>
+            <div class="product-details">
+              <h2>Red Light Therapy Device</h2>
+              <p>Experience the benefits of red light therapy with our advanced device, designed to rejuvenate skin, reduce inflammation, and enhance overall wellness. Perfect for spas, clinics, and home use, our device delivers professional-grade results.</p>
+              <div class="product-price">$3,299</div>
+              <a href="#" class="product-btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-controls">
+          <button class="carousel-arrow" onclick="prevProduct()">&#10094;</button>
+          <button class="carousel-arrow" onclick="nextProduct()">&#10095;</button>
+        </div>
+        
+        <div class="carousel-dots">
+          <span class="dot active" onclick="showProduct(0)"></span>
+          <span class="dot" onclick="showProduct(1)"></span>
+          <span class="dot" onclick="showProduct(2)"></span>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let currentIndex = 0;
+      const products = document.querySelectorAll(".product");
+      const dots = document.querySelectorAll(".dot");
+
+      function showProduct(index) {
+        // Hide current product
+        products[currentIndex].classList.remove("active");
+        dots[currentIndex].classList.remove("active");
+        
+        // Update index
+        currentIndex = index;
+        
+        // Show new product
+        products[currentIndex].classList.add("active");
+        dots[currentIndex].classList.add("active");
+      }
+
+      function nextProduct() {
+        let newIndex = (currentIndex + 1) % products.length;
+        showProduct(newIndex);
+      }
+
+      function prevProduct() {
+        let newIndex = (currentIndex - 1 + products.length) % products.length;
+        showProduct(newIndex);
+      }
+      
+      // Auto-advance carousel
+      setInterval(nextProduct, 7000);
+    </script>
+  </body>
+</html>

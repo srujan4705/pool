@@ -24,8 +24,7 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Therapies</a></li>
-                    <li><a href="#">Wellness Blog</a></li>
+                    <li><a href="{{ url_for('therapies') }}">Our Therapies</a></li>                    <li><a href="#">Wellness Blog</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Faq's</a></li>
                 </ul>
@@ -35,16 +34,7 @@
                     <i class='bx bx-moon moon'></i>
                     <i class='bx bx-sun sun'></i>
                 </div>
-                <div class="searchBox">
-                   <div class="searchToggle">
-                    <i class='bx bx-x cancel'></i>
-                    <i class='bx bx-search search'></i>
-                   </div>
-                    <div class="search-field">
-                        <input type="text" placeholder="Search...">
-                        <i class='bx bx-search'></i>
-                    </div>
-                </div>
+                
                 <button class="btn btn-survey" onclick="window.location.href='/survey'">
                     Request a Call Back
                 </button>

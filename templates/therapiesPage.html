@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrative and Lifestyle Wellness</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='therapiesPage.css') }}">
+</head>
+<body>
+    <h1 class="main-title">Our Therapies</h1>
+
+    <div class="container">
+        <div class="left-panel">
+            <div class="page-indicator">
+                <span id="current-page">1</span> / <span id="total-pages">8</span>
+            </div>
+            
+            <div class="content-wrapper">
+                <div class="content-section" data-section="iv-drip">
+                    <h1>IV Drip Therapy</h1>
+                    <p>Replenish vital nutrients and hydration directly into your bloodstream with our customized IV drip therapies, designed to boost immunity, increase energy, and enhance overall wellness.</p>
+                </div>
+                
+                <div class="content-section" data-section="cryotherapy">
+                    <h1>Whole Body Cryotherapy</h1>
+                    <p>Experience the rejuvenating effects of extreme cold therapy, which helps reduce inflammation, relieve pain, and accelerate recovery while boosting your metabolism and immune system.</p>
+                </div>
+                
+                <div class="content-section" data-section="hyperbaric">
+                    <h1>Hyperbaric Oxygen Therapy</h1>
+                    <p>Breathe in pure oxygen in a pressurized environment to enhance your body's natural healing processes, improve circulation, and promote cellular regeneration.</p>
+                </div>
+                
+                <div class="content-section" data-section="red-light">
+                    <h1>Red Light Therapy</h1>
+                    <p>Harness the power of red and near-infrared light to stimulate cellular repair, reduce inflammation, improve skin health, and enhance overall cellular function.</p>
+                </div>
+                
+                <div class="content-section" data-section="collagen">
+                    <h1>Collagen Bed Therapy</h1>
+                    <p>Rejuvenate your skin and support joint health with our advanced collagen bed therapy, which stimulates natural collagen production for a more youthful appearance.</p>
+                </div>
+                
+                <div class="content-section" data-section="ems">
+                    <h1>EMS Training</h1>
+                    <p>Maximize your workout efficiency with Electrical Muscle Stimulation training, which activates more muscle fibers than conventional exercise for better results in less time.</p>
+                </div>
+                
+                <div class="content-section" data-section="infrared">
+                    <h1>Far Infrared Sauna Therapy</h1>
+                    <p>Detoxify your body, relieve stress, and improve circulation with our far infrared sauna sessions, which penetrate deeper than traditional saunas for enhanced benefits.</p>
+                </div>
+                
+                <div class="content-section" data-section="sensory">
+                    <h1>Sensory Deprivation Therapy</h1>
+                    <p>Experience profound relaxation and mental clarity through float therapy, where external stimuli are minimized to allow your mind and body to reach deep states of rest.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="therapy-list">
+                <div class="therapy-item" data-section="iv-drip">
+                    <div class="checkmark">✓</div>
+                    <div class="therapy-name">IV Drip Therapy</div>
+                </div>
+                
+                <div class="therapy-item" data-section="cryotherapy">
+                    <div class="checkmark">✓</div>
+                    <div class="therapy-name">Whole Body Cryotherapy</div>
+                </div>
+                
+                <div class="therapy-item" data-section="hyperbaric">
+                    <div class="checkmark">✓</div>
+                    <div class="therapy-name">Hyperbaric Oxygen Therapy</div>
+                </div>
+                
+                <div class="therapy-item" data-section="red-light">
+                    <div class="checkmark">✓</div>
+                    <div class="therapy-name">Red Light Therapy</div>
+                </div>
+                
+                <div class="therapy-item" data-section="collagen">
+                    <div class="checkmark">✓</div>
+                    <div class="therapy-name">Collagen Bed Therapy</div>
+                </div>
+                
+                <div class="therapy-item" data-section="ems">
+                    <div class="checkmark">✓</div>
+                    <div class="therapy-name">EMS Training</div>
+                </div>
+                
+                <div class="therapy-item" data-section="infrared">
+                    <div class="checkmark">✓</div>
+                    <div class="therapy-name">Far Infrared Sauna Therapy</div>
+                </div>
+                
+                <div class="therapy-item" data-section="sensory">
+                    <div class="checkmark">✓</div>
+                    <div class="therapy-name">Sensory Deprivation Therapy</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='therapiesPage.js') }}"></script>
+</body>
+</html>

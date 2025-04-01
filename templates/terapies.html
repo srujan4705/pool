@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integrative Wellness Therapies</title>
+    <link rel="stylesheet" href="static/terapies.css" />
+    <script src="static/terapies.js" defer></script>
+    <style>
+      /* Additional inline styles for enhancement */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        margin: 0;
+        margin-top: 70px;
+        padding: 0;
+      }
+
+      .page-header {
+        text-align: center;
+        padding: 50px 20px 30px;
+      }
+
+      .page-header h1 {
+        font-size: 48px;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .page-header p {
+        font-size: 18px;
+        color: #34495e;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .carousel-container {
+        max-width: 1200px;
+        margin: 0 auto 80px;
+        padding: 20px;
+        position: relative;
+      }
+
+      /* New navigation controls styling */
+      .navigation-controls {
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .prev-btn,
+      .next-btn {
+        font-size: 24px;
+        background: #2c3e50;
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        clip-path: polygon(
+          0% 20%,
+          60% 20%,
+          60% 0%,
+          100% 50%,
+          60% 100%,
+          60% 80%,
+          0% 80%
+        );
+      }
+
+      /* Separate hover styles for each button */
+      .prev-btn {
+        transform: rotate(180deg);
+      }
+
+      .prev-btn:hover {
+        background: #3498db;
+        transform: scale(1.1) rotate(180deg);
+      }
+
+      .next-btn:hover {
+        background: #3498db;
+        transform: scale(1.1);
+      }
+
+      .next-btn:hover {
+        transform: scale(1.1);
+      }
+
+      /* New dots styling */
+      .dots-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 30px;
+        position: relative;
+      }
+
+      .dots-container::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background: rgba(44, 62, 80, 0.2);
+        top: 50%;
+        left: 0;
+        right: 0;
+        z-index: 0;
+      }
+
+      .dot {
+        width: 16px;
+        height: 16px;
+        background: white;
+        border: 2px solid #2c3e50;
+        border-radius: 0;
+        transform: rotate(45deg);
+        display: inline-block;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+      }
+
+      .dot.active {
+        background: #3498db;
+        border-color: #3498db;
+        transform: rotate(45deg) scale(1.2);
+      }
+
+      /* Add smooth scroll animation */
+      .carousel {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Added page header section -->
+    <div class="page-header">
+      <h1>Our Wellness Therapies</h1>
+      <p>
+        Discover our comprehensive range of cutting-edge therapies designed to
+        enhance your physical wellbeing, accelerate recovery, and promote
+        overall wellness through advanced technology and proven methods.
+      </p>
+    </div>
+
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+        <div class="carousel">
+          <!-- Card 1 -->
+          <div class="hover-card">
+            <h2 class="static-heading">Whole Body Cryotherapy</h2>
+            <img src="static/cryoterapy.jpg" alt="Cryotherapy" />
+            <div class="card-content">
+              <h2>Whole Body Cryotherapy</h2>
+              <p>
+                Experience the revitalizing effects of extreme cold temperatures
+                to reduce inflammation, boost recovery, and enhance overall
+                wellness.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="hover-card">
+            <h2 class="static-heading">Hyperbaric Oxygen Therapy</h2>
+            <img src="static/oxygen.jpg" alt="Hyperbaric Oxygen" />
+            <div class="card-content">
+              <h2>Hyperbaric Oxygen Therapy</h2>
+              <p>
+                Boost your recovery with increased oxygen levels that promote
+                healing, reduce inflammation and support cellular regeneration.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="hover-card">
+            <h2 class="static-heading">Red Light Therapy</h2>
+            <img src="static/red.jpg" alt="Red Light Therapy" />
+            <div class="card-content">
+              <h2>Red Light Therapy</h2>
+              <p>
+                Enhance healing and skin health with non-invasive red light
+                technology that stimulates cell repair and reduces signs of
+                aging.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="hover-card">
+            <h2 class="static-heading">Collagen Bed Therapy</h2>
+            <img src="static/collagen.jpg" alt="Collagen Bed Therapy" />
+            <div class="card-content">
+              <h2>Collagen Bed Therapy</h2>
+              <p>
+                Rejuvenate your skin and support joint health with our advanced collagen 
+                bed therapy, which stimulates natural collagen production for a more 
+                youthful appearance.
+              </p>
+            </div>
+          </div>
+
+          
+          <!-- Card 5 -->
+          <div class="hover-card">
+            <h2 class="static-heading">EMS Training</h2>
+            <img src="static/ems.jpg" alt="EMS Training" />
+            <div class="card-content">
+              <h2>EMS Training</h2>
+              <p>
+                Unlock the power of cutting-edge fitness with EMS Training—a
+                revolutionary workout method designed to maximize muscle
+                activation and efficiency.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="hover-card">
+            <h2 class="static-heading">Far Infrared Sauna Therapy</h2>
+            <img src="static/infra.jpg" alt="Far Infrared Sauna" />
+            <div class="card-content">
+              <h2>Far Infrared Sauna Therapy</h2>
+              <p>
+                Experience the next level of wellness with Far Infrared Sauna
+                Therapy—a cutting-edge heat treatment designed to promote deep
+                relaxation and detoxification.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          
+        </div>
+      </div>
+
+      <!-- Updated Navigation Controls -->
+      <div class="navigation-controls">
+        <button class="prev-btn" aria-label="Previous slide"></button>
+        <div class="dots-container">
+          <!-- Dots will be inserted by JavaScript -->
+        </div>
+        <button class="next-btn" aria-label="Next slide"></button>
+      </div>
+    </div>
+
+    <script>
+      // Add this script to update the navigation behavior
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector(".carousel");
+        const cards = document.querySelectorAll(".hover-card");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+        const dotsContainer = document.querySelector(".dots-container");
+
+        let currentIndex = 0;
+        let cardWidth = cards[0].offsetWidth;
+        let cardsToShow = Math.floor(carousel.offsetWidth / cardWidth);
+        let maxIndex = cards.length - cardsToShow;
+
+        // Create dots
+        cards.forEach((_, index) => {
+          if (index <= maxIndex) {
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => navigateToCard(index));
+            dotsContainer.appendChild(dot);
+          }
+        });
+
+        // Update dots
+        function updateDots() {
+          document.querySelectorAll(".dot").forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentIndex);
+          });
+        }
+
+        // Navigate to specific card
+        function navigateToCard(index) {
+          currentIndex = index;
+          const scrollPosition = index * cardWidth;
+          carousel.scrollTo({
+            left: scrollPosition,
+            behavior: "smooth",
+          });
+          updateDots();
+        }
+
+        // Next button
+        nextBtn.addEventListener("click", () => {
+          if (currentIndex < maxIndex) {
+            navigateToCard(currentIndex + 1);
+          } else {
+            // Loop back to first card with animation
+            carousel.scrollTo({
+              left: 0,
+              behavior: "smooth",
+            });
+            currentIndex = 0;
+            updateDots();
+          }
+        });
+
+        // Previous button
+        prevBtn.addEventListener("click", () => {
+          if (currentIndex > 0) {
+            navigateToCard(currentIndex - 1);
+          } else {
+            // Loop to last card with animation
+            navigateToCard(maxIndex);
+          }
+        });
+
+        // Handle window resize
+        window.addEventListener("resize", () => {
+          cardWidth = cards[0].offsetWidth;
+          cardsToShow = Math.floor(carousel.offsetWidth / cardWidth);
+          maxIndex = cards.length - cardsToShow;
+        });
+
+        // Add scroll event listener to update dots based on scroll position
+        carousel.addEventListener("scroll", () => {
+          const scrollPosition = carousel.scrollLeft;
+          const newIndex = Math.round(scrollPosition / cardWidth);
+          if (newIndex !== currentIndex) {
+            currentIndex = newIndex;
+            updateDots();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

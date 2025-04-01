@@ -12,5 +12,10 @@ def home():
 def survey():
     return render_template('survey.html')
 
+# Our Therapies Page Route
+@app.route('/therapies')
+def therapies():
+    return render_template('therapiesPage.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

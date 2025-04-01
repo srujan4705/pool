@@ -1,0 +1,182 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: 40px auto;
+    overflow: visible; /* Changed from hidden to visible */
+    height: 500px;
+}
+
+/* Wrapper to hold the carousel items */
+.carousel-wrapper {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Carousel Track */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+/* Individual Cards */
+.hover-card {
+    position: relative;
+    width: 420px;
+    height: 450px;
+    margin: 0 15px;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Full-size image container */
+.hover-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hover-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card content (hidden by default, visible on hover) */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.hover-card:hover .card-content {
+    transform: translateY(0);
+}
+
+.card-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* Navigation Arrows - Made more visible */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3); /* Added background for visibility */
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100; /* Increased z-index */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Moved arrows inward for visibility */
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* Dots Indicator - Made more visible */
+.dots-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #e0e4ea;
+    border-radius: 20px;
+    z-index: 100; /* Increased z-index */
+    width: 200px; /* Fixed width */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #555;
+    transform: scale(1.2);
+}
+/* Static heading positioned at the bottom of the image */
+.static-heading {
+    position: absolute;
+    bottom: 10px; /* Moves the text closer to the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+    transition: opacity 0.3s ease-in-out;
+    text-decoration: underline;
+}
+
+/* Hide static heading on hover */
+.hover-card:hover .static-heading {
+    opacity: 0;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 95%;
+        height: 450px;
+    }
+    
+    .hover-card {
+        width: 280px;
+        height: 400px;
+    }
+}

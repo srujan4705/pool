@@ -3,393 +3,497 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Survey Form</title>
+    <title>Wellness Assessment Survey</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="static/survey.css" />
+    <style>
+      /* Additional styling for enhanced user experience */
+      .formbold-main-wrapper {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 40px 0;
+      }
+      
+      .formbold-form-wrapper {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      
+      .survey-header {
+        background-color: #2c3e50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .survey-header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+      
+      .survey-header p {
+        opacity: 0.9;
+        font-size: 16px;
+      }
+      
+      .formbold-subheading {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 8px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+      
+      .formbold-btn {
+        background-color: #3498db;
+        transition: all 0.3s ease;
+      }
+      
+      .formbold-btn:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .progress-container {
+        margin-bottom: 30px;
+      }
+      
+      .progress {
+        height: 8px;
+        border-radius: 4px;
+      }
+      
+      .section-container {
+        padding: 0 20px;
+      }
+      
+      .form-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      
+      @media (max-width: 768px) {
+        .formbold-radio-flex {
+          flex-direction: column;
+        }
+        
+        .formbold-radio-group {
+          margin-bottom: 10px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="formbold-main-wrapper">
-      <!-- Author: FormBold Team -->
-      <!-- Learn More: https://formbold.com -->
       <div class="formbold-form-wrapper">
-        <img
-          src="{{ url_for('static', filename='survey.png') }}"
-          alt="Survey Image"
-          class="img-fluid"
-        />
-
-        <form action="https://formbold.com/s/FORM_ID" method="POST">
-          <div class="formbold-input-group">
-            <label for="name" class="formbold-form-label"> Name </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Enter your name"
-              class="formbold-form-input"
-            />
-          </div>
-
-          <div class="formbold-input-group">
-            <label for="age" class="formbold-form-label"> Age </label>
-            <input
-              type="text"
-              name="age"
-              id="age"
-              placeholder="Enter your age"
-              class="formbold-form-input"
-            />
-          </div>
-          
-
-          <div class="formbold-input-group">
-            <label class="formbold-form-label"> Select your Category </label>
-
-            <select
-              class="formbold-form-select"
-              name="occupation"
-              id="occupation"
-            >
-              <option value="IT Professional">IT Professional</option>
-              <option value="Business Owner">Business Owner</option>
-              <option value="Government Official">Government Official</option>
-              <option value="Athlete">Athlete</option>
-            </select>
-          </div>
-
-
-          <div class="formbold-input-radio-wrapper">
-            <label class="formbold-form-label">
-              Primary Concerns
-            </label>
-
-            <div class="formbold-radio-flex">
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="Stress & Sleep Issues">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="Stress & Sleep Issues"
-                    id="Stress & Sleep Issues"
-                  />
-                  Stress & Sleep Issues
-
-
-                  <span class="formbold-radio-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="Skin & Hair Aging">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="Skin & Hair Aging"
-                    id="Skin & Hair Aging"
-                  />
-                  Skin & Hair Aging
-
-
-                  <span class="formbold-radio-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="Hormonal Balance">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="Hormonal Balance"
-                    id="Hormonal Balance"
-                  />
-                  Hormonal Balance
-
-
-                  <span class="formbold-radio-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="Joint & Muscle Recovery">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="Joint & Muscle Recovery"
-                    id="Joint & Muscle Recovery"
-                  />
-                  Joint & Muscle Recovery
-
-
-                  <span class="formbold-radio-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="Energy & Cognitive Function">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="Energy & Cognitive Function"
-                    id="Energy & Cognitive Function"
-                  />
-                  Energy & Cognitive Function
-
-
-                  <span class="formbold-radio-checkmark"></span>
-                </label>
-              </div>
-
-
-
-
-          
+        <!-- Added header section -->
+        <div class="survey-header">
+          <h1>Personalized Wellness Assessment</h1>
+          <p>Help us create a customized wellness plan tailored to your lifestyle and needs</p>
+        </div>
         
+        <!-- Progress bar -->
+        <div class="progress-container px-4">
+          <div class="d-flex justify-content-between mb-1">
+            <span>Progress</span>
+            <span id="progress-percentage">0%</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" id="progress-bar"></div>
+          </div>
+        </div>
+        
+        <div class="text-center mb-4">
+          <img
+            src="{{ url_for('static', filename='survey.png') }}"
+            alt="Wellness Assessment"
+            class="img-fluid"
+            style="max-height: 200px;"
+          />
+        </div>
 
-          <!-- daily routine -->
-          <div class="formbold-input-group">
-            <h3 class="formbold-subheading">Daily Routine Assesment</h3>
-            <!-- Subheading -->
-
-            <div class="formbold-input-group">
-              <label class="formbold-form-label"
-                >How many hours do you sleep?</label
-              >
-              <select
-                class="formbold-form-select"
-                name="sleep_hours"
-                id="sleep_hours"
-              >
-                <option value="Less than 5">Less than 5</option>
-                <option value="5-6">5-6</option>
-                <option value="6-7">6-7</option>
-                <option value="More than 7">More than 7</option>
-              </select>
+        <form action="https://formbold.com/s/FORM_ID" method="POST" id="wellness-survey">
+          <div class="section-container">
+            <h3 class="formbold-subheading">Personal Information</h3>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div class="formbold-input-group">
+                  <label for="name" class="formbold-form-label">Full Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter your full name"
+                    class="formbold-form-input"
+                    required
+                  />
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="formbold-input-group">
+                  <label for="email" class="formbold-form-label">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    class="formbold-form-input"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <div class="formbold-input-group">
+                  <label for="age" class="formbold-form-label">Age</label>
+                  <input
+                    type="number"
+                    name="age"
+                    id="age"
+                    placeholder="Enter your age"
+                    class="formbold-form-input"
+                    min="18"
+                    max="100"
+                    required
+                  />
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="formbold-input-group">
+                  <label class="formbold-form-label">Professional Category</label>
+                  <select
+                    class="formbold-form-select"
+                    name="occupation"
+                    id="occupation"
+                    required
+                  >
+                    <option value="" disabled selected>Select your category</option>
+                    <option value="IT Professional">IT Professional</option>
+                    <option value="Business Owner">Business Owner</option>
+                    <option value="Government Official">Government Official</option>
+                    <option value="Athlete">Athlete</option>
+                    <option value="Healthcare Professional">Healthcare Professional</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
-            <div class="formbold-input-group">
-              <label class="formbold-form-label"
-                >How many hours do you work daily?</label
-              >
-              <select
-                class="formbold-form-select"
-                name="work_hours"
-                id="work_hours"
-              >
-                <option value="Less than 8">Less than 8</option>
-                <option value="8-10">8-10</option>
-                <option value="10-12">10-12</option>
-                <option value="More than 12">More than 12</option>
-              </select>
+            <h3 class="formbold-subheading">Primary Health Concerns</h3>
+            <p class="mb-3">Select your main wellness priorities (you can select multiple)</p>
+
+            <div class="formbold-checkbox-flex">
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="concerns[]" value="Stress & Sleep Issues">
+                  Stress & Sleep Issues
+                  <span class="formbold-checkbox-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="concerns[]" value="Skin & Hair Aging">
+                  Skin & Hair Aging
+                  <span class="formbold-checkbox-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="concerns[]" value="Hormonal Balance">
+                  Hormonal Balance
+                  <span class="formbold-checkbox-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="concerns[]" value="Joint & Muscle Recovery">
+                  Joint & Muscle Recovery
+                  <span class="formbold-checkbox-checkmark"></span>
+                </label>
+              </div>
+
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="concerns[]" value="Energy & Cognitive Function">
+                  Energy & Cognitive Function
+                  <span class="formbold-checkbox-checkmark"></span>
+                </label>
+              </div>
             </div>
 
-            <div class="formbold-input-group">
-              <label class="formbold-form-label"
-                >How many hours do you spend sitting?</label
-              >
-              <select
-                class="formbold-form-select"
-                name="sitting_hours"
-                id="sitting_hours"
-              >
-                <option value="Less than 3">Less than 3</option>
-                <option value="3-6">3-6</option>
-                <option value="6-9">6-9</option>
-                <option value="More than 9">More than 9</option>
-              </select>
+            <h3 class="formbold-subheading">Daily Routine Assessment</h3>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="formbold-input-group">
+                  <label class="formbold-form-label">How many hours do you sleep?</label>
+                  <select
+                    class="formbold-form-select"
+                    name="sleep_hours"
+                    id="sleep_hours"
+                    required
+                  >
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Less than 5">Less than 5</option>
+                    <option value="5-6">5-6</option>
+                    <option value="6-7">6-7</option>
+                    <option value="More than 7">More than 7</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="formbold-input-group">
+                  <label class="formbold-form-label">How many hours do you work daily?</label>
+                  <select
+                    class="formbold-form-select"
+                    name="work_hours"
+                    id="work_hours"
+                    required
+                  >
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Less than 8">Less than 8</option>
+                    <option value="8-10">8-10</option>
+                    <option value="10-12">10-12</option>
+                    <option value="More than 12">More than 12</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
-            <div class="formbold-input-group">
-              <label class="formbold-form-label"
-                >Do you exercise regularly?</label
-              >
-              <select
-                class="formbold-form-select"
-                name="exercise_habit"
-                id="exercise_habit"
-              >
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                <option value="Occasionally">Occasionally</option>
-              </select>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <div class="formbold-input-group">
+                  <label class="formbold-form-label">How many hours do you spend sitting?</label>
+                  <select
+                    class="formbold-form-select"
+                    name="sitting_hours"
+                    id="sitting_hours"
+                    required
+                  >
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Less than 3">Less than 3</option>
+                    <option value="3-6">3-6</option>
+                    <option value="6-9">6-9</option>
+                    <option value="More than 9">More than 9</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="formbold-input-group">
+                  <label class="formbold-form-label">Do you exercise regularly?</label>
+                  <select
+                    class="formbold-form-select"
+                    name="exercise_habit"
+                    id="exercise_habit"
+                    required
+                  >
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Occasionally">Occasionally</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
-            <div class="formbold-input-group">
-              <label class="formbold-form-label"
-                >Do you take supplements?</label
-              >
+            <div class="formbold-input-group mt-3">
+              <label class="formbold-form-label">Do you take supplements?</label>
               <select
                 class="formbold-form-select"
                 name="take_supplements"
                 id="take_supplements"
+                required
               >
-                
+                <option value="" disabled selected>Select an option</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
                 <option value="Open to it">Open to it</option>
               </select>
             </div>
-          </div>
 
-
-
-          <div class="formbold-input-group">
             <h3 class="formbold-subheading">Nutritional Habits</h3>
-            <label class="formbold-form-label">
-                Dietary Preference:
-            </label>
-            <select class="formbold-form-select" name="dietary_preference" id="dietary_preference">
-                <option value="Vegetarian">Vegetarian</option>
-                <option value="Non-Vegetarian">Non-Vegetarian</option>
-                <option value="Vegan">Vegan</option>
-                <option value="Keto">Keto</option>
-            </select>
-        </div>
-        
-        <div class="formbold-input-group">
-            <label class="formbold-form-label">
-                Do you consume alcohol?
-            </label>
-            <select class="formbold-form-select" name="alcohol_consumption" id="alcohol_consumption">
-                <option value="Never">Never</option>
-                <option value="Occasionally">Occasionally</option>
-                <option value="Frequently">Frequently</option>
-            </select>
-        </div>
-        
-        <div class="formbold-input-group">
-            <label class="formbold-form-label">
-                How much water do you drink daily?
-            </label>
-            <select class="formbold-form-select" name="water_intake" id="water_intake">
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div class="formbold-input-group">
+                  <label class="formbold-form-label">Dietary Preference:</label>
+                  <select class="formbold-form-select" name="dietary_preference" id="dietary_preference" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Keto">Keto</option>
+                    <option value="Paleo">Paleo</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="formbold-input-group">
+                  <label class="formbold-form-label">Do you consume alcohol?</label>
+                  <select class="formbold-form-select" name="alcohol_consumption" id="alcohol_consumption" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Never">Never</option>
+                    <option value="Occasionally">Occasionally</option>
+                    <option value="Frequently">Frequently</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="formbold-input-group mt-3">
+              <label class="formbold-form-label">How much water do you drink daily?</label>
+              <select class="formbold-form-select" name="water_intake" id="water_intake" required>
+                <option value="" disabled selected>Select an option</option>
                 <option value="Less than 1L">Less than 1L</option>
                 <option value="1-2L">1-2L</option>
                 <option value="More than 2L">More than 2L</option>
-            </select>
-        </div>
+              </select>
+            </div>
 
+            <h3 class="formbold-subheading">Biohacking & Recovery Preferences</h3>
+            <p class="mb-3">Select therapies you're interested in (you can select multiple)</p>
 
-
-        <div class="formbold-input-radio-wrapper">
-            <label class="formbold-form-label">
-                Biohacking & Recovery Preferences 
-            </label>
-
-            <div class="formbold-radio-flex">
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="Cryotherapy">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="Cryotherapy"
-                    id="Cryotherapy"
-                  />
+            <div class="formbold-checkbox-flex">
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="therapies[]" value="Cryotherapy">
                   Cryotherapy
-
-
-
-
-                  <span class="formbold-radio-checkmark"></span>
+                  <span class="formbold-checkbox-checkmark"></span>
                 </label>
               </div>
 
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="Hyperbaric Oxygen Therapy">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="Hyperbaric Oxygen Therapy"
-                    id="Hyperbaric Oxygen Therapy"
-                  />
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="therapies[]" value="Hyperbaric Oxygen Therapy">
                   Hyperbaric Oxygen Therapy
-
-
-                  <span class="formbold-radio-checkmark"></span>
+                  <span class="formbold-checkbox-checkmark"></span>
                 </label>
               </div>
 
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="Red Light Therapy">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="Red Light Therapy"
-                    id="Red Light Therapy"
-                  />
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="therapies[]" value="Red Light Therapy">
                   Red Light Therapy
-                  <span class="formbold-radio-checkmark"></span>
+                  <span class="formbold-checkbox-checkmark"></span>
                 </label>
               </div>
 
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="Sauna & Steam">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="Sauna & Steam"
-                    id="Sauna & Steam"
-                  />
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="therapies[]" value="Sauna & Steam">
                   Sauna & Steam
-                  <span class="formbold-radio-checkmark"></span>
+                  <span class="formbold-checkbox-checkmark"></span>
                 </label>
               </div>
 
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="Cold Plunge">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="Cold Plunge"
-                    id="Cold Plunge"
-                  />
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="therapies[]" value="Cold Plunge">
                   Cold Plunge
-                  <span class="formbold-radio-checkmark"></span>
+                  <span class="formbold-checkbox-checkmark"></span>
                 </label>
               </div>
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label" for="IV Drips & Supplementation">
-                  <input
-                    class="formbold-input-radio"
-                    type="radio"
-                    name="IV Drips & Supplementation"
-                    id="IV Drips & Supplementation"
-                  />
+              
+              <div class="formbold-checkbox-group">
+                <label class="formbold-checkbox-label">
+                  <input type="checkbox" name="therapies[]" value="IV Drips & Supplementation">
                   IV Drips & Supplementation
-                  <span class="formbold-radio-checkmark"></span>
+                  <span class="formbold-checkbox-checkmark"></span>
                 </label>
               </div>
-        
+            </div>
 
-        
-        
+            <div class="formbold-input-group mt-4">
+              <label for="message" class="formbold-form-label">
+                Additional health concerns or goals
+              </label>
+              <textarea
+                rows="4"
+                name="message"
+                id="message"
+                placeholder="Share any specific health concerns or wellness goals you have..."
+                class="formbold-form-input"
+              ></textarea>
+            </div>
 
-          
-
-              
-             
-
-              
-
-              
-
-          <div>
-            <label for="message" class="formbold-form-label">
-              Any comments or suggestions
-            </label>
-            <textarea
-              rows="6"
-              name="message"
-              id="message"
-              placeholder="Type here..."
-              class="formbold-form-input"
-            ></textarea>
+            <div class="form-footer">
+              <button type="reset" class="btn btn-outline-secondary">Reset Form</button>
+              <button type="submit" class="formbold-btn">Submit Assessment</button>
+            </div>
           </div>
-
-          <button class="formbold-btn">Submit</button>
         </form>
       </div>
     </div>
+    
+    <script>
+      // Form progress tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('wellness-survey');
+        const inputs = form.querySelectorAll('input, select, textarea');
+        const progressBar = document.getElementById('progress-bar');
+        const progressPercentage = document.getElementById('progress-percentage');
+        
+        function updateProgress() {
+          const totalFields = inputs.length;
+          let filledFields = 0;
+          
+          inputs.forEach(input => {
+            if (input.type === 'checkbox' || input.type === 'radio') {
+              if (input.checked) filledFields++;
+            } else if (input.value.trim() !== '') {
+              filledFields++;
+            }
+          });
+          
+          const progress = Math.round((filledFields / totalFields) * 100);
+          progressBar.style.width = progress + '%';
+          progressPercentage.textContent = progress + '%';
+        }
+        
+        inputs.forEach(input => {
+          input.addEventListener('change', updateProgress);
+          input.addEventListener('input', updateProgress);
+        });
+        
+        // Form validation
+        form.addEventListener('submit', function(event) {
+          let isValid = true;
+          const requiredInputs = form.querySelectorAll('[required]');
+          
+          requiredInputs.forEach(input => {
+            if (!input.value.trim()) {
+              isValid = false;
+              input.classList.add('is-invalid');
+            } else {
+              input.classList.remove('is-invalid');
+            }
+          });
+          
+          if (!isValid) {
+            event.preventDefault();
+            alert('Please fill in all required fields.');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
