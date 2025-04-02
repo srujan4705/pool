@@ -6,6 +6,7 @@
 }
 body {
   font-family: "Inter", sans-serif;
+  
 }
 
 
@@ -14,6 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 48px;
+  background: linear-gradient(135deg, #e8fff1 0%, #b6ecd7 100%);
 }
 
 .formbold-form-wrapper {

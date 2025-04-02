@@ -14,91 +14,358 @@
       .formbold-main-wrapper {
         background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         padding: 40px 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      
+
       .formbold-form-wrapper {
-        background-color: white;
+        background-color: rgb(204, 241, 243);
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        width: 100%;
+        max-width: 800px;
       }
-      
+
       .survey-header {
-        background-color: #2c3e50;
-        color: white;
+        background-color: #dae8ea;
+        color:#109299;
         padding: 20px;
         text-align: center;
         margin-bottom: 30px;
       }
-      
+
       .survey-header h1 {
         font-size: 28px;
         margin-bottom: 10px;
       }
-      
+
       .survey-header p {
         opacity: 0.9;
         font-size: 16px;
       }
-      
+
       .formbold-subheading {
         color: #2c3e50;
         border-bottom: 2px solid #3498db;
         padding-bottom: 8px;
-        margin-top: 30px;
+        margin-top: 10px;
         margin-bottom: 20px;
       }
-      
+
       .formbold-btn {
         background-color: #3498db;
         transition: all 0.3s ease;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: 500;
       }
-      
+
       .formbold-btn:hover {
         background-color: #2980b9;
         transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
-      
+
       .progress-container {
         margin-bottom: 30px;
       }
-      
+
       .progress {
         height: 8px;
         border-radius: 4px;
       }
-      
+
       .section-container {
-        padding: 0 20px;
+        padding: 0 20px 20px;
       }
-      
+
       .form-footer {
         display: flex;
         justify-content: space-between;
         margin-top: 30px;
       }
-      
-      @media (max-width: 768px) {
-        .formbold-radio-flex {
-          flex-direction: column;
+
+      .question-step {
+        display: none;
+        padding: 20px;
+        animation: fadeIn 0.5s;
+      }
+
+      .question-step.active {
+        display: block;
+      }
+
+      .question-title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      .step-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        gap: 10px;
+      }
+
+      /* Updated button styles for width distribution */
+      .step-navigation .prev-btn {
+        width: 30%;
+      }
+
+      .step-navigation .next-btn,
+      .step-navigation .formbold-btn[type="submit"] {
+        width: 70%;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
-        
-        .formbold-radio-group {
-          margin-bottom: 10px;
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Updated checkbox styles for vertical display */
+      .formbold-checkbox-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .formbold-checkbox-group {
+        margin-bottom: 5px;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.2s;
+      }
+
+      .formbold-checkbox-group:hover {
+        background-color: #e9ecef;
+      }
+
+      .formbold-checkbox-label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        width: 100%;
+      }
+      .formbold-main-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        background: linear-gradient(
+          -45deg,
+          #e8fff1,
+          #b6ecd7,
+          #d7f5e8,
+          #c2f2e0
+        );
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .formbold-form-wrapper {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .survey-header {
+        background-color: #dae8ea;
+        color: #109299;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .survey-header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .survey-header p {
+        opacity: 0.9;
+        font-size: 16px;
+      }
+
+      .formbold-subheading {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 8px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      .formbold-btn {
+        background-color: #3498db;
+        transition: all 0.3s ease;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: 500;
+      }
+
+      .formbold-btn:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .progress-container {
+        margin-bottom: 30px;
+      }
+
+      .progress {
+        height: 8px;
+        border-radius: 4px;
+      }
+
+      .section-container {
+        padding: 0 20px 20px;
+      }
+
+      .form-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+
+      .question-step {
+        display: none;
+        padding: 20px;
+        animation: fadeIn 0.5s;
+      }
+
+      .question-step.active {
+        display: block;
+      }
+
+      .question-title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      .step-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        gap: 10px;
+      }
+
+      /* Updated button styles for width distribution */
+      .step-navigation .prev-btn {
+        width: 30%;
+      }
+
+      .step-navigation .next-btn,
+      .step-navigation .formbold-btn[type="submit"] {
+        width: 70%;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Updated checkbox styles for vertical display */
+      .formbold-checkbox-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .formbold-checkbox-group {
+        margin-bottom: 5px;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.2s;
+      }
+
+      .formbold-checkbox-group:hover {
+        background-color: #e9ecef;
+      }
+
+      .formbold-checkbox-label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        width: 100%;
+      }
+      .formbold-main-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+        min-height: 100vh;
+        background-size: 400% 400%;
+        animation: gradientBG 5s ease infinite;
+        background: linear-gradient(
+          -45deg,
+          #dae8ea,
+          #c5dde0,
+          #e0ebed,
+          #b8d5d8,
+          #dae8ea
+        );
+      }
+
+      @media (max-width: 768px) {
+        .formbold-form-wrapper {
+          margin: 0 15px;
         }
       }
     </style>
   </head>
   <body>
+    {% include 'navbar.html' %}
     <div class="formbold-main-wrapper">
       <div class="formbold-form-wrapper">
         <!-- Added header section -->
         <div class="survey-header">
           <h1>Personalized Wellness Assessment</h1>
-          <p>Help us create a customized wellness plan tailored to your lifestyle and needs</p>
+          <p>
+            Help us create a customized wellness plan tailored to your lifestyle
+            and needs
+          </p>
         </div>
-        
+
         <!-- Progress bar -->
         <div class="progress-container px-4">
           <div class="d-flex justify-content-between mb-1">
@@ -106,393 +373,770 @@
             <span id="progress-percentage">0%</span>
           </div>
           <div class="progress">
-            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" id="progress-bar"></div>
+            <div
+              class="progress-bar bg-info"
+              role="progressbar"
+              style="width: 0%"
+              id="progress-bar"
+            ></div>
           </div>
         </div>
-        
-        <div class="text-center mb-4">
-          <img
-            src="{{ url_for('static', filename='survey.png') }}"
-            alt="Wellness Assessment"
-            class="img-fluid"
-            style="max-height: 200px;"
-          />
-        </div>
 
-        <form action="https://formbold.com/s/FORM_ID" method="POST" id="wellness-survey">
+        <form id="wellness-survey" method="POST">
           <div class="section-container">
-            <h3 class="formbold-subheading">Personal Information</h3>
-            
-            <div class="row">
-              <div class="col-md-6">
-                <div class="formbold-input-group">
-                  <label for="name" class="formbold-form-label">Full Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter your full name"
-                    class="formbold-form-input"
-                    required
-                  />
-                </div>
+            <!-- Step 1: Personal Information - Name -->
+            <div class="question-step active" id="step-1">
+              <div class="question-title">What is your full name?</div>
+              <div class="formbold-input-group">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Enter your full name"
+                  class="formbold-form-input"
+                  required
+                />
               </div>
-              
-              <div class="col-md-6">
-                <div class="formbold-input-group">
-                  <label for="email" class="formbold-form-label">Email Address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    class="formbold-form-input"
-                    required
-                  />
-                </div>
-              </div>
-            </div>
-            
-            <div class="row mt-3">
-              <div class="col-md-6">
-                <div class="formbold-input-group">
-                  <label for="age" class="formbold-form-label">Age</label>
-                  <input
-                    type="number"
-                    name="age"
-                    id="age"
-                    placeholder="Enter your age"
-                    class="formbold-form-input"
-                    min="18"
-                    max="100"
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div class="col-md-6">
-                <div class="formbold-input-group">
-                  <label class="formbold-form-label">Professional Category</label>
-                  <select
-                    class="formbold-form-select"
-                    name="occupation"
-                    id="occupation"
-                    required
-                  >
-                    <option value="" disabled selected>Select your category</option>
-                    <option value="IT Professional">IT Professional</option>
-                    <option value="Business Owner">Business Owner</option>
-                    <option value="Government Official">Government Official</option>
-                    <option value="Athlete">Athlete</option>
-                    <option value="Healthcare Professional">Healthcare Professional</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
+              <div class="step-navigation">
+                <div></div>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="2"
+                >
+                  Next
+                </button>
               </div>
             </div>
 
-            <h3 class="formbold-subheading">Primary Health Concerns</h3>
-            <p class="mb-3">Select your main wellness priorities (you can select multiple)</p>
-
-            <div class="formbold-checkbox-flex">
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="concerns[]" value="Stress & Sleep Issues">
-                  Stress & Sleep Issues
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
+            <!-- Step 2: Personal Information - Email -->
+            <div class="question-step" id="step-2">
+              <div class="question-title">What is your email address?</div>
+              <div class="formbold-input-group">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  class="formbold-form-input"
+                  required
+                />
               </div>
-
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="concerns[]" value="Skin & Hair Aging">
-                  Skin & Hair Aging
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="concerns[]" value="Hormonal Balance">
-                  Hormonal Balance
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="concerns[]" value="Joint & Muscle Recovery">
-                  Joint & Muscle Recovery
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="concerns[]" value="Energy & Cognitive Function">
-                  Energy & Cognitive Function
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="1"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="3"
+                >
+                  Next
+                </button>
               </div>
             </div>
 
-            <h3 class="formbold-subheading">Daily Routine Assessment</h3>
+            <!-- Step 3: Personal Information - Age -->
+            <div class="question-step" id="step-3">
+              <div class="question-title">What is your age?</div>
+              <div class="formbold-input-group">
+                <input
+                  type="number"
+                  name="age"
+                  id="age"
+                  placeholder="Enter your age"
+                  class="formbold-form-input"
+                  min="18"
+                  max="100"
+                  required
+                />
+              </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="2"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="4"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
 
-            <div class="row">
-              <div class="col-md-6">
-                <div class="formbold-input-group">
-                  <label class="formbold-form-label">How many hours do you sleep?</label>
-                  <select
-                    class="formbold-form-select"
-                    name="sleep_hours"
-                    id="sleep_hours"
-                    required
-                  >
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="Less than 5">Less than 5</option>
-                    <option value="5-6">5-6</option>
-                    <option value="6-7">6-7</option>
-                    <option value="More than 7">More than 7</option>
-                  </select>
+            <!-- Step 4: Personal Information - Occupation -->
+            <div class="question-step" id="step-4">
+              <div class="question-title">
+                What is your professional category?
+              </div>
+              <div class="formbold-input-group">
+                <select
+                  class="formbold-form-select"
+                  name="occupation"
+                  id="occupation"
+                  required
+                >
+                  <option value="" disabled selected>
+                    Select your category
+                  </option>
+                  <option value="IT Professional">IT Professional</option>
+                  <option value="Business Owner">Business Owner</option>
+                  <option value="Government Official">
+                    Government Official
+                  </option>
+                  <option value="Athlete">Athlete</option>
+                  <option value="Healthcare Professional">
+                    Healthcare Professional
+                  </option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="3"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="5"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 5: Health Concerns -->
+            <div class="question-step" id="step-5">
+              <div class="question-title">
+                What are your main wellness priorities?
+              </div>
+              <p class="mb-3">Select all that apply</p>
+              <div class="formbold-checkbox-flex">
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="concerns[]"
+                      value="Stress & Sleep Issues"
+                    />
+                    Stress & Sleep Issues
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
+                </div>
+
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="concerns[]"
+                      value="Skin & Hair Aging"
+                    />
+                    Skin & Hair Aging
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
+                </div>
+
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="concerns[]"
+                      value="Hormonal Balance"
+                    />
+                    Hormonal Balance
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
+                </div>
+
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="concerns[]"
+                      value="Joint & Muscle Recovery"
+                    />
+                    Joint & Muscle Recovery
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
+                </div>
+
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="concerns[]"
+                      value="Energy & Cognitive Function"
+                    />
+                    Energy & Cognitive Function
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
                 </div>
               </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="4"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="6"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
 
-              <div class="col-md-6">
-                <div class="formbold-input-group">
-                  <label class="formbold-form-label">How many hours do you work daily?</label>
-                  <select
-                    class="formbold-form-select"
-                    name="work_hours"
-                    id="work_hours"
-                    required
-                  >
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="Less than 8">Less than 8</option>
-                    <option value="8-10">8-10</option>
-                    <option value="10-12">10-12</option>
-                    <option value="More than 12">More than 12</option>
-                  </select>
+            <!-- Step 6: Sleep Hours -->
+            <div class="question-step" id="step-6">
+              <div class="question-title">
+                How many hours do you sleep each night?
+              </div>
+              <div class="formbold-input-group">
+                <select
+                  class="formbold-form-select"
+                  name="sleep_hours"
+                  id="sleep_hours"
+                  required
+                >
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Less than 5">Less than 5</option>
+                  <option value="5-6">5-6</option>
+                  <option value="6-7">6-7</option>
+                  <option value="More than 7">More than 7</option>
+                </select>
+              </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="5"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="7"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- Remaining steps with updated button styling -->
+            <!-- Step 7: Work Hours -->
+            <div class="question-step" id="step-7">
+              <div class="question-title">
+                How many hours do you work daily?
+              </div>
+              <div class="formbold-input-group">
+                <select
+                  class="formbold-form-select"
+                  name="work_hours"
+                  id="work_hours"
+                  required
+                >
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Less than 8">Less than 8</option>
+                  <option value="8-10">8-10</option>
+                  <option value="10-12">10-12</option>
+                  <option value="More than 12">More than 12</option>
+                </select>
+              </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="6"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="8"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 8: Sitting Hours -->
+            <div class="question-step" id="step-8">
+              <div class="question-title">
+                How many hours do you spend sitting each day?
+              </div>
+              <div class="formbold-input-group">
+                <select
+                  class="formbold-form-select"
+                  name="sitting_hours"
+                  id="sitting_hours"
+                  required
+                >
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Less than 3">Less than 3</option>
+                  <option value="3-6">3-6</option>
+                  <option value="6-9">6-9</option>
+                  <option value="More than 9">More than 9</option>
+                </select>
+              </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="7"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="9"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 9: Exercise Habits -->
+            <div class="question-step" id="step-9">
+              <div class="question-title">Do you exercise regularly?</div>
+              <div class="formbold-input-group">
+                <select
+                  class="formbold-form-select"
+                  name="exercise_habit"
+                  id="exercise_habit"
+                  required
+                >
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  <option value="Occasionally">Occasionally</option>
+                </select>
+              </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="8"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="10"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 10: Supplements -->
+            <div class="question-step" id="step-10">
+              <div class="question-title">Do you take supplements?</div>
+              <div class="formbold-input-group">
+                <select
+                  class="formbold-form-select"
+                  name="take_supplements"
+                  id="take_supplements"
+                  required
+                >
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  <option value="Open to it">Open to it</option>
+                </select>
+              </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="9"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="11"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 11: Dietary Preference -->
+            <div class="question-step" id="step-11">
+              <div class="question-title">What is your dietary preference?</div>
+              <div class="formbold-input-group">
+                <select
+                  class="formbold-form-select"
+                  name="dietary_preference"
+                  id="dietary_preference"
+                  required
+                >
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Vegetarian">Vegetarian</option>
+                  <option value="Non-Vegetarian">Non-Vegetarian</option>
+                  <option value="Vegan">Vegan</option>
+                  <option value="Keto">Keto</option>
+                  <option value="Paleo">Paleo</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="10"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="12"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 12: Alcohol Consumption -->
+            <div class="question-step" id="step-12">
+              <div class="question-title">Do you consume alcohol?</div>
+              <div class="formbold-input-group">
+                <select
+                  class="formbold-form-select"
+                  name="alcohol_consumption"
+                  id="alcohol_consumption"
+                  required
+                >
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Never">Never</option>
+                  <option value="Occasionally">Occasionally</option>
+                  <option value="Frequently">Frequently</option>
+                </select>
+              </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="11"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="13"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 13: Water Intake -->
+            <div class="question-step" id="step-13">
+              <div class="question-title">
+                How much water do you drink daily?
+              </div>
+              <div class="formbold-input-group">
+                <select
+                  class="formbold-form-select"
+                  name="water_intake"
+                  id="water_intake"
+                  required
+                >
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="Less than 1L">Less than 1L</option>
+                  <option value="1-2L">1-2L</option>
+                  <option value="More than 2L">More than 2L</option>
+                </select>
+              </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="12"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="14"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 14: Therapy Preferences -->
+            <div class="question-step" id="step-14">
+              <div class="question-title">
+                Which therapies are you interested in?
+              </div>
+              <p class="mb-3">Select all that apply</p>
+              <div class="formbold-checkbox-flex">
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="therapies[]"
+                      value="Cryotherapy"
+                    />
+                    Cryotherapy
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
+                </div>
+
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="therapies[]"
+                      value="Hyperbaric Oxygen Therapy"
+                    />
+                    Hyperbaric Oxygen Therapy
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
+                </div>
+
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="therapies[]"
+                      value="Red Light Therapy"
+                    />
+                    Red Light Therapy
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
+                </div>
+
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="therapies[]"
+                      value="Sauna & Steam"
+                    />
+                    Sauna & Steam
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
+                </div>
+
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="therapies[]"
+                      value="Cold Plunge"
+                    />
+                    Cold Plunge
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
+                </div>
+
+                <div class="formbold-checkbox-group">
+                  <label class="formbold-checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="therapies[]"
+                      value="IV Drips & Supplementation"
+                    />
+                    IV Drips & Supplementation
+                    <span class="formbold-checkbox-checkmark"></span>
+                  </label>
                 </div>
               </div>
-            </div>
-
-            <div class="row mt-3">
-              <div class="col-md-6">
-                <div class="formbold-input-group">
-                  <label class="formbold-form-label">How many hours do you spend sitting?</label>
-                  <select
-                    class="formbold-form-select"
-                    name="sitting_hours"
-                    id="sitting_hours"
-                    required
-                  >
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="Less than 3">Less than 3</option>
-                    <option value="3-6">3-6</option>
-                    <option value="6-9">6-9</option>
-                    <option value="More than 9">More than 9</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="formbold-input-group">
-                  <label class="formbold-form-label">Do you exercise regularly?</label>
-                  <select
-                    class="formbold-form-select"
-                    name="exercise_habit"
-                    id="exercise_habit"
-                    required
-                  >
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                    <option value="Occasionally">Occasionally</option>
-                  </select>
-                </div>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="13"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  class="formbold-btn next-btn"
+                  data-next="15"
+                >
+                  Next
+                </button>
               </div>
             </div>
 
-            <div class="formbold-input-group mt-3">
-              <label class="formbold-form-label">Do you take supplements?</label>
-              <select
-                class="formbold-form-select"
-                name="take_supplements"
-                id="take_supplements"
-                required
-              >
-                <option value="" disabled selected>Select an option</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                <option value="Open to it">Open to it</option>
-              </select>
-            </div>
-
-            <h3 class="formbold-subheading">Nutritional Habits</h3>
-            
-            <div class="row">
-              <div class="col-md-6">
-                <div class="formbold-input-group">
-                  <label class="formbold-form-label">Dietary Preference:</label>
-                  <select class="formbold-form-select" name="dietary_preference" id="dietary_preference" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="Vegetarian">Vegetarian</option>
-                    <option value="Non-Vegetarian">Non-Vegetarian</option>
-                    <option value="Vegan">Vegan</option>
-                    <option value="Keto">Keto</option>
-                    <option value="Paleo">Paleo</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
+            <!-- Step 15: Additional Comments -->
+            <div class="question-step" id="step-15">
+              <div class="question-title">
+                Do you have any additional health concerns or goals?
               </div>
-              
-              <div class="col-md-6">
-                <div class="formbold-input-group">
-                  <label class="formbold-form-label">Do you consume alcohol?</label>
-                  <select class="formbold-form-select" name="alcohol_consumption" id="alcohol_consumption" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="Never">Never</option>
-                    <option value="Occasionally">Occasionally</option>
-                    <option value="Frequently">Frequently</option>
-                  </select>
-                </div>
+              <div class="formbold-input-group">
+                <textarea
+                  rows="4"
+                  name="message"
+                  id="message"
+                  placeholder="Share any specific health concerns or wellness goals you have..."
+                  class="formbold-form-input"
+                ></textarea>
               </div>
-            </div>
-            
-            <div class="formbold-input-group mt-3">
-              <label class="formbold-form-label">How much water do you drink daily?</label>
-              <select class="formbold-form-select" name="water_intake" id="water_intake" required>
-                <option value="" disabled selected>Select an option</option>
-                <option value="Less than 1L">Less than 1L</option>
-                <option value="1-2L">1-2L</option>
-                <option value="More than 2L">More than 2L</option>
-              </select>
-            </div>
-
-            <h3 class="formbold-subheading">Biohacking & Recovery Preferences</h3>
-            <p class="mb-3">Select therapies you're interested in (you can select multiple)</p>
-
-            <div class="formbold-checkbox-flex">
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="therapies[]" value="Cryotherapy">
-                  Cryotherapy
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
+              <div class="step-navigation">
+                <button
+                  type="button"
+                  class="formbold-btn prev-btn"
+                  data-prev="14"
+                >
+                  Previous
+                </button>
+                <button type="submit" class="formbold-btn">
+                  Submit Assessment
+                </button>
               </div>
-
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="therapies[]" value="Hyperbaric Oxygen Therapy">
-                  Hyperbaric Oxygen Therapy
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="therapies[]" value="Red Light Therapy">
-                  Red Light Therapy
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="therapies[]" value="Sauna & Steam">
-                  Sauna & Steam
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="therapies[]" value="Cold Plunge">
-                  Cold Plunge
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
-              </div>
-              
-              <div class="formbold-checkbox-group">
-                <label class="formbold-checkbox-label">
-                  <input type="checkbox" name="therapies[]" value="IV Drips & Supplementation">
-                  IV Drips & Supplementation
-                  <span class="formbold-checkbox-checkmark"></span>
-                </label>
-              </div>
-            </div>
-
-            <div class="formbold-input-group mt-4">
-              <label for="message" class="formbold-form-label">
-                Additional health concerns or goals
-              </label>
-              <textarea
-                rows="4"
-                name="message"
-                id="message"
-                placeholder="Share any specific health concerns or wellness goals you have..."
-                class="formbold-form-input"
-              ></textarea>
-            </div>
-
-            <div class="form-footer">
-              <button type="reset" class="btn btn-outline-secondary">Reset Form</button>
-              <button type="submit" class="formbold-btn">Submit Assessment</button>
             </div>
           </div>
         </form>
       </div>
     </div>
-    
+
     <script>
-      // Form progress tracking
-      document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('wellness-survey');
-        const inputs = form.querySelectorAll('input, select, textarea');
-        const progressBar = document.getElementById('progress-bar');
-        const progressPercentage = document.getElementById('progress-percentage');
-        
-        function updateProgress() {
-          const totalFields = inputs.length;
-          let filledFields = 0;
-          
-          inputs.forEach(input => {
-            if (input.type === 'checkbox' || input.type === 'radio') {
-              if (input.checked) filledFields++;
-            } else if (input.value.trim() !== '') {
-              filledFields++;
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("wellness-survey");
+        const progressBar = document.getElementById("progress-bar");
+        const progressPercentage = document.getElementById(
+          "progress-percentage"
+        );
+        const totalSteps = document.querySelectorAll(".question-step").length;
+        let currentStep = 1;
+
+        // Initialize progress
+        updateProgress(currentStep, totalSteps);
+
+        // Next button click handler
+        document.querySelectorAll(".next-btn").forEach((button) => {
+          button.addEventListener("click", function () {
+            const currentStepElement = document.getElementById(
+              `step-${currentStep}`
+            );
+            const inputs = currentStepElement.querySelectorAll(
+              "input, select, textarea"
+            );
+            let isValid = true;
+
+            // Validate current step inputs
+            inputs.forEach((input) => {
+              if (input.hasAttribute("required") && !validateInput(input)) {
+                isValid = false;
+                input.classList.add("is-invalid");
+              } else {
+                input.classList.remove("is-invalid");
+              }
+            });
+
+            if (isValid) {
+              const nextStep = parseInt(this.getAttribute("data-next"));
+              goToStep(nextStep);
             }
           });
-          
-          const progress = Math.round((filledFields / totalFields) * 100);
-          progressBar.style.width = progress + '%';
-          progressPercentage.textContent = progress + '%';
+        });
+
+        // Previous button click handler
+        document.querySelectorAll(".prev-btn").forEach((button) => {
+          button.addEventListener("click", function () {
+            const prevStep = parseInt(this.getAttribute("data-prev"));
+            goToStep(prevStep);
+          });
+        });
+
+        // Auto-advance for select elements
+        document.querySelectorAll("select").forEach((select) => {
+          select.addEventListener("change", function () {
+            const stepElement = this.closest(".question-step");
+            if (stepElement && this.value) {
+              const nextBtn = stepElement.querySelector(".next-btn");
+              if (nextBtn) {
+                setTimeout(() => {
+                  nextBtn.click();
+                }, 500);
+              }
+            }
+          });
+        });
+
+        // Form submission
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Collect all form data
+          const formData = new FormData(form);
+
+          // Here you would typically send the data to your server
+          console.log("Form submitted!");
+
+          // Show a success message
+          alert(
+            "Thank you for completing the wellness assessment! We will create a personalized plan for you."
+          );
+
+          // Optionally redirect to a thank you page
+          // window.location.href = '/thank-you';
+        });
+
+        // Helper functions
+        function goToStep(step) {
+          document
+            .getElementById(`step-${currentStep}`)
+            .classList.remove("active");
+          document.getElementById(`step-${step}`).classList.add("active");
+          currentStep = step;
+          updateProgress(currentStep, totalSteps);
+
+          // Scroll to top of form
+          document
+            .querySelector(".formbold-form-wrapper")
+            .scrollIntoView({ behavior: "smooth" });
         }
-        
-        inputs.forEach(input => {
-          input.addEventListener('change', updateProgress);
-          input.addEventListener('input', updateProgress);
-        });
-        
-        // Form validation
-        form.addEventListener('submit', function(event) {
-          let isValid = true;
-          const requiredInputs = form.querySelectorAll('[required]');
-          
-          requiredInputs.forEach(input => {
-            if (!input.value.trim()) {
-              isValid = false;
-              input.classList.add('is-invalid');
-            } else {
-              input.classList.remove('is-invalid');
-            }
-          });
-          
-          if (!isValid) {
-            event.preventDefault();
-            alert('Please fill in all required fields.');
+
+        function updateProgress(current, total) {
+          const percentage = Math.round(((current - 1) / (total - 1)) * 100);
+          progressBar.style.width = `${percentage}%`;
+          progressPercentage.textContent = `${percentage}%`;
+        }
+
+        function validateInput(input) {
+          if (input.type === "checkbox") {
+            // For checkbox groups, at least one should be checked
+            const name = input.name;
+            const checkboxes = document.querySelectorAll(
+              `input[name="${name}"]`
+            );
+            return Array.from(checkboxes).some((cb) => cb.checked);
+          } else if (input.type === "email") {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
+          } else {
+            return input.value.trim() !== "";
           }
-        });
+        }
       });
     </script>
   </body>

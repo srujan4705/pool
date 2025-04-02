@@ -9,16 +9,21 @@
 </head>
 <body>
     {% include 'navbar.html' %}
-    <div class="video-container">
+    <div class="video-container d-flex flex-column justify-content-center">
         <video autoplay loop muted playsinline>
             <source src="static/intro.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-    </div>
-    <div class="d-flex flex-column align-items-center justify-content-center text-center" style="margin-top: 20px;">
-        <button class="btn btn1 btn-info three">Still STuck</button>
-    </div>
+        <p class="paraaa">if you are stuck i have an idea 
 
+            > Advanced Wellness & Recovery – Revitalize Your Body, Restore Balance, and Thrive Every Day</p>
+        <div class="d-flex flex-column align-items-center justify-content-center text-center" >
+            <button class="btn btn-grad" onclick="window.location.href='{{ url_for('survey') }}'">Still STuck</button>
+            
+        </div>
+    
+    </div>
+   
 
     {% include 'terapies.html' %}
     {% include 'product.html' %}

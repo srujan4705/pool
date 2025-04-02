@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Appointment | The Wellness Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <style>
+        .hero-section {
+            background-color: #dae8ea;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-family: 'Cormorant Garamond', serif;
+            color: #000;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #109299;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .booking-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .booking-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-section {
+            padding: 40px;
+        }
+
+        .form-title {
+            font-size: 32px;
+            font-family: 'Cormorant Garamond', serif;
+            color: #109299;
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .form-control:focus {
+            border-color: #109299;
+            box-shadow: none;
+        }
+
+        .submit-btn {
+            background: #109299;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #0d7f85;
+            transform: translateY(-2px);
+        }
+
+        .video-section {
+            height: 100%;
+            background: #dae8ea;
+        }
+
+        .video-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-cards {
+            padding: 60px 0;
+        }
+
+        .info-card {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+
+        .info-card i {
+            font-size: 40px;
+            color: #109299;
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .info-card p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Book Your Appointment</h1>
+            <p class="hero-subtitle">Take the first step towards your wellness journey</p>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-card">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="form-section">
+                            <h2 class="form-title">Schedule Your Visit</h2>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name*" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Email Address*" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" placeholder="Phone Number*" required>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-control" required>
+                                        <option value="">Select Treatment*</option>
+                                        <option value="cryo">Whole Body Cryotherapy</option>
+                                        <option value="iv">IV Drip Therapy</option>
+                                        <option value="hyperbaric">Hyperbaric Oxygen Therapy</option>
+                                        <option value="redlight">Red Light Therapy</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="date" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="4" placeholder="Additional Notes"></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">Book Appointment</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="video-section image-section">
+                            <img src="{{ url_for('static', filename='static/booking.jpg') }}" alt="Wellness Center" class="booking-image">
+                        </div>
+                    
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-cards">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <i class="fas fa-phone"></i>
+                            <h3>Call our Wellness Experts!</h3>
+                            <p>1-800-121-2429<br>+91-95994-40939</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Shoot us an E-Mail!</h3>
+                            <p>hello@thewellnessco.in</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Visit Your Nearest Location!</h3>
+                            <p>Monday to Sunday: 10:30AM – 7:30PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

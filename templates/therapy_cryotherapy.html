@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whole Body Cryotherapy | The Wellness Co</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Add navbar CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='therapy.css') }}"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Animation */
+      .fade-in {
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+      /* Hero Section */
+      .hero-section {
+        background-color: #dae8ea;
+        padding: 120px 0 80px;
+        position: relative;
+      }
+
+      .hero-title {
+        font-size: 64px;
+        font-family: "Cormorant Garamond", serif;
+        color: #000;
+        margin-bottom: 30px;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+        color: #333;
+        max-width: 600px;
+        line-height: 1.6;
+      }
+
+      /* Video Section */
+      .video-section {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .video-container video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+      /* Content Section */
+      .content-section {
+        padding: 80px 0;
+        position: relative;
+        background-color: #e9f0f1;
+      }
+
+      .section-counter {
+        position: sticky;
+        top: 100px;
+        font-size: 120px;
+        color: #a8e8f0;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .section-title {
+        font-size: 36px;
+        font-family: "Cormorant Garamond", serif;
+        margin-bottom: 30px;
+        color: #109299;
+        font-weight: 400;
+      }
+
+      .section-content {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #333;
+      }
+
+      .section-image {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .content-block {
+        margin-bottom: 120px;
+      }
+
+      .content-block:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Benefits Section */
+      .benefits-section {
+        background-color: #f8f9fa;
+        padding: 80px 0;
+      }
+
+      .benefit-item {
+        display: flex;
+        margin-bottom: 30px;
+      }
+
+      .benefit-icon {
+        font-size: 24px;
+        color: #109299;
+        margin-right: 20px;
+      }
+
+      .benefit-content h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .benefit-content p {
+        font-size: 16px;
+        color: #666;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background-color: #109299;
+        padding: 80px 0;
+        text-align: center;
+        color: white;
+      }
+
+      .cta-title {
+        font-size: 36px;
+        font-family: "Cormorant Garamond", serif;
+        margin-bottom: 20px;
+      }
+
+      .cta-subtitle {
+        font-size: 18px;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        background-color: white;
+        color: #109299;
+        border: none;
+        padding: 15px 40px;
+        font-size: 18px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive */
+      @media (max-width: 991px) {
+        .hero-title {
+          font-size: 48px;
+        }
+
+        .section-counter {
+          position: relative;
+          top: 0;
+          font-size: 80px;
+          margin-bottom: 20px;
+        }
+
+        .content-block {
+          margin-bottom: 80px;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h1 class="hero-title">What is Whole Body Cryotherapy?</h1>
+            <p class="hero-subtitle">
+              Discover the chill that heals. Restart, recharge, and refresh your
+              mind & body in just 3 minutes!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+      <div class="container">
+        <div class="video-container">
+          <video width="100%" controls>
+            <source src="How Does Cryotherapy Work_.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+      <div class="container">
+        <!-- Section 1 -->
+        <div class="content-block">
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="section-counter">01</div>
+            </div>
+            <div class="col-lg-5">
+              <h2 class="section-title">Dare to Freeze</h2>
+              <div class="section-content">
+                <ul>
+                  <li>
+                    Exposes your body to -100°C to -140°C temperatures for a
+                    total of 3 to 4 minutes.
+                  </li>
+                  <li>
+                    Boosts circulation, reduces cortisol levels + oxidative
+                    stress, and releases energy boosting endorphins.
+                  </li>
+                  <li>
+                    Reduces inflammation, promotes muscle recovery, and boosts
+                    metabolism.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <img
+                src="{{ url_for('static', filename='static\dare.jpeg') }}"
+                alt="Cryotherapy Treatment"
+                class="section-image"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="content-block">
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="section-counter">02</div>
+            </div>
+            <div class="col-lg-5">
+              <h2 class="section-title">The Science Behind the Chill</h2>
+              <div class="section-content">
+                <p>
+                  Whole Body Cryotherapy works by triggering the body's natural
+                  healing mechanisms. When exposed to extreme cold, blood
+                  vessels constrict, reducing blood flow to the extremities and
+                  redirecting it to vital organs.
+                </p>
+                <p>
+                  Once you exit the chamber, oxygenated blood rushes back to
+                  peripheral tissues, delivering nutrients and removing toxins.
+                  This process, known as vasoconstriction followed by
+                  vasodilation, is what creates the therapeutic effects.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <img
+                src="{{ url_for('static', filename='static/oxygen') }}"
+                alt="Cryotherapy Science"
+                class="section-image"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="content-block">
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="section-counter">03</div>
+            </div>
+            <div class="col-lg-5">
+              <h2 class="section-title">Benefits You'll Experience</h2>
+              <div class="section-content">
+                <p>
+                  Regular cryotherapy sessions can provide numerous benefits:
+                </p>
+                <ul>
+                  <li>Reduced inflammation and pain</li>
+                  <li>Accelerated muscle recovery</li>
+                  <li>Improved energy and mood</li>
+                  <li>Enhanced skin appearance</li>
+                  <li>Boosted metabolism and calorie burning</li>
+                  <li>Improved sleep quality</li>
+                  <li>Strengthened immune system</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <img
+                src="static"
+                alt="Cryotherapy Benefits"
+                class="section-image"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="content-block">
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="section-counter">04</div>
+            </div>
+            <div class="col-lg-5">
+              <h2 class="section-title">What to Expect</h2>
+              <div class="section-content">
+                <p>Your cryotherapy session will be brief but invigorating:</p>
+                <ol>
+                  <li>
+                    You'll change into provided protective gear (gloves, socks,
+                    slippers)
+                  </li>
+                  <li>
+                    Enter the chamber, which will cool rapidly to between -100°C
+                    and -140°C
+                  </li>
+                  <li>
+                    Remain in the chamber for 2-3 minutes while a technician
+                    guides you
+                  </li>
+                  <li>Exit feeling energized and refreshed</li>
+                </ol>
+                <p>
+                  The entire process takes less than 10 minutes, making it easy
+                  to fit into your busy schedule.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <img
+                src="{{ url_for('static', filename='images/cryo-section4.jpg') }}"
+                alt="Cryotherapy Experience"
+                class="section-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">
+          Why Choose Our Cryotherapy
+        </h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="benefit-content">
+                <h4>State-of-the-Art Equipment</h4>
+                <p>
+                  Our cryotherapy chambers are the most advanced fully-electric
+                  systems available, designed and manufactured in Germany.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <div class="benefit-content">
+                <h4>Expert Supervision</h4>
+                <p>
+                  All sessions are monitored by trained professionals who ensure
+                  your safety and comfort throughout the experience.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-wind"></i>
+              </div>
+              <div class="benefit-content">
+                <h4>Nitrogen-Free Technology</h4>
+                <p>
+                  Our electric chambers eliminate exposure to nitrogen and other
+                  harmful gases, providing a safer experience.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="benefit-content">
+                <h4>Personalized Programs</h4>
+                <p>
+                  We offer customized treatment plans based on your specific
+                  health goals and needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">Ready to Experience the Chill?</h2>
+        <p class="cta-subtitle">
+          Book your first cryotherapy session today and discover the
+          transformative benefits for yourself.
+        </p>
+        <button class="cta-button" onclick="window.location.href='{{ url_for('booking') }}'">Book Your Appointment</button>
+      </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Intersection Observer for scroll animations
+      document.addEventListener("DOMContentLoaded", function () {
+        const contentBlocks = document.querySelectorAll(".content-block");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.2,
+          }
+        );
+
+        contentBlocks.forEach((block) => {
+          observer.observe(block);
+        });
+      });
+    </script>
+  </body>
+</html>

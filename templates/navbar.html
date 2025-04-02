@@ -16,27 +16,26 @@
     <nav>
         <div class="nav-bar">
             <i class='bx bx-menu sidebarOpen' ></i>
-            <span class="logo navLogo"><a href="#">ARC</a></span>
+            <span class="logo navLogo"><a href="{{ url_for('index') }}">Hybrid Human</a></span>
             <div class="menu">
                 <div class="logo-toggle">
-                    <span class="logo"><a href="#">ARC</a></span>
+                    <span class="logo"><a href="#">Hybrid Human</a></span>
                     <i class='bx bx-x siderbarClose'></i>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="{{ url_for('therapies') }}">Our Therapies</a></li>                    <li><a href="#">Wellness Blog</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Faq's</a></li>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('therapies') }}">Our Therapies</a></li>                    
+
+                    <li><a href="{{url_for('products')}}">Our Products</a></li>
+                    <li><a href="{{url_for('about')}}">About Us</a></li>
+                    <li><a href="{{url_for('faq')}}">Faq's</a></li>
                 </ul>
             </div>
             <div class="darkLight-searchBox">
-                <div class="dark-light">
-                    <i class='bx bx-moon moon'></i>
-                    <i class='bx bx-sun sun'></i>
-                </div>
+               
                 
-                <button class="btn btn-survey" onclick="window.location.href='/survey'">
-                    Request a Call Back
+                <button class="btn btn-survey gradient-btn" onclick="window.location.href='/book-appointment'">
+                    Contact US
                 </button>
                 
             </div>

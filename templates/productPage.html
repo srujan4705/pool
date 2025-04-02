@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Devices | The Wellness Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='productPage.css') }}">
+    <style>
+        .product-grid {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .product-item {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-media {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background: #fff;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .brand-logo {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .product-highlight {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #109299;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 991px) {
+            .product-content {
+                text-align: center;
+                padding: 40px 20px;
+            }
+        }
+        .hero-section {
+            background-color: #dae8ea;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-family: 'Cormorant Garamond', serif;
+            color: #000;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #109299;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .product-grid {
+            padding: 80px 0;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            font-size: 20px;
+            color: #109299;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background: #109299;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #0d7f85;
+        }
+
+        .features-section {
+            background: #f5f7f7;
+            padding: 60px 0;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: #109299;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Wellness Devices</h1>
+            <p class="hero-subtitle">Advanced Technology for Your Well-being</p>
+        </div>
+    </div>
+
+
+    <section class="product-grid">
+        <div class="container">
+            <!-- LifeCube Cryotherapy -->
+            <div class="product-item">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="product-media">
+                            <img src="{{ url_for('static', filename='images/lifecube.jpg') }}" alt="LifeCube Cryotherapy" class="product-image">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="product-content">
+                            <img src="{{ url_for('static', filename='images/lifecube-logo.png') }}" alt="LifeCube Logo" class="brand-logo">
+                            <p class="product-description">
+                                Whole Body Cryotherapy (WBC) is the application of extremely cold air, between -80 and -110 degrees celsius, to accelerate muscle recovery time, boost performance, burn calories, increase collagen production, and promote general wellness.
+                            </p>
+                            <p class="product-highlight">
+                                LifeCube's Cryo Chambers are the most advanced fully-electric cryotherapy chambers in the world. They are designed and made in Germany, featuring zero exposure to nitrogen & other harmful gases.
+                            </p>
+                            <button class="cta-button">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IQ Body Device -->
+            <div class="product-item">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-6">
+                        <div class="product-media">
+                            <img src="{{ url_for('static', filename='images/iqbody.jpg') }}" alt="IQ Body Device" class="product-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="product-content">
+                            <img src="{{ url_for('static', filename='images/iqbody-logo.png') }}" alt="IQ Body Logo" class="brand-logo">
+                            <p class="product-description">
+                                This innovative cooling device takes cryolipolysis to the next level. Pamper your customers with an active cold application on their face and body, or spread the six smooth and curved cold plates over your customers' problem areas for a relaxing passive application.
+                            </p>
+                            <button class="cta-button">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more products in the same format -->
+        </div>
+    </section>
+
+    
+
+    <section class="features-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>Certified Quality</h3>
+                        <p>All devices are FDA-approved and CE-certified for safety and effectiveness.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-tools feature-icon"></i>
+                        <h3>Expert Installation</h3>
+                        <p>Professional installation and training provided by certified technicians.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-headset feature-icon"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Round-the-clock technical support and maintenance services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="https://kit.fontawesome.com/your-code.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+    
