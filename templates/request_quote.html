@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Quote | The Wellness Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='quote.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <section class="quote-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="quote-form-container">
+                        <h1 class="form-title">Request a Quote</h1>
+                        <p class="form-subtitle">Tell us about your requirements and we'll get back to you with a customized quote.</p>
+                        
+                        <form id="quoteForm" action="{{ url_for('submit_quote') }}" method="POST">
+                            <div class="form-section">
+                                <h3>Personal Information</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="firstName">First Name*</label>
+                                            <input type="text" id="firstName" name="firstName" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="lastName">Last Name*</label>
+                                            <input type="text" id="lastName" name="lastName" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address*</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number*</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Business Information</h3>
+                                <div class="form-group">
+                                    <label for="companyName">Company Name</label>
+                                    <input type="text" id="companyName" name="companyName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="businessType">Business Type</label>
+                                    <select id="businessType" name="businessType">
+                                        <option value="">Select Business Type</option>
+                                        <option value="spa">Spa/Wellness Center</option>
+                                        <option value="gym">Gym/Fitness Center</option>
+                                        <option value="clinic">Medical Clinic</option>
+                                        <option value="hotel">Hotel/Resort</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Product Interest</h3>
+                                <div class="form-group">
+                                    <label for="product">Product of Interest*</label>
+                                    <select id="product" name="product" required>
+                                        <option value="">Select Product</option>
+                                        <option value="lifecube">LifeCube Cryotherapy Chamber</option>
+                                        <option value="iqbody">IQ Body Device</option>
+                                        <option value="redlight">Red Light Therapy Device</option>
+                                        <option value="ems">EMS Training System</option>
+                                        <option value="hyperbaric">Hyperbaric Chamber</option>
+                                        <option value="infrared">Far Infrared Sauna</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="timeframe">Purchase Timeframe</label>
+                                    <select id="timeframe" name="timeframe">
+                                        <option value="immediate">Immediate</option>
+                                        <option value="1-3months">1-3 Months</option>
+                                        <option value="3-6months">3-6 Months</option>
+                                        <option value="6months+">6+ Months</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Additional Information</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="Tell us more about your requirements..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="submit-btn">Request Quote</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='quote.js') }}"></script>
+</body>
+</html>

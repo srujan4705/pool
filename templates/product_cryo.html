@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeCube Cryotherapy Chamber | The Wellness Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='product_detail.css') }}">
+    <link rel="stylesheet" href="static/product_detail.css">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">LifeCube Cryotherapy Chamber</h1>
+                    <p class="hero-subtitle">Advanced German Engineering for Ultimate Wellness</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-temperature-low"></i>
+                            <span>-110°C Capability</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Zero Nitrogen Exposure</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Fully Electric System</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="{{ url_for('static', filename='images/lifecube-hero.jpg') }}" alt="LifeCube Cryotherapy Chamber">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Description -->
+    <section class="description-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="description-content">
+                        <h2 class="section-title">About LifeCube Cryotherapy</h2>
+                        <p class="description-text">
+                            The LifeCube Cryotherapy Chamber represents the pinnacle of German engineering in wellness technology. This state-of-the-art whole-body cryotherapy solution delivers controlled exposure to extremely cold temperatures, ranging from -80°C to -110°C, in a safe and nitrogen-free environment.
+                        </p>
+                        <p class="description-text">
+                            Unlike traditional cryotherapy chambers that rely on liquid nitrogen, LifeCube utilizes an advanced electric cooling system, making it both environmentally friendly and significantly safer for operators and clients. The chamber's sophisticated temperature control system ensures precise and consistent treatment conditions, while the spacious interior accommodates comfortable treatment sessions.
+                        </p>
+                        <div class="key-benefits">
+                            <h3>Key Benefits</h3>
+                            <ul>
+                                <li>Enhanced muscle recovery and reduced inflammation</li>
+                                <li>Improved circulation and immune system response</li>
+                                <li>Increased collagen production for skin rejuvenation</li>
+                                <li>Accelerated metabolism and calorie burning</li>
+                                <li>Reduced stress and improved sleep quality</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item main">
+                    <img src="{{ url_for('static', filename='images/lifecube-main.jpg') }}" alt="LifeCube Main View">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/lifecube-detail1.jpg') }}" alt="Control Panel">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/lifecube-detail2.jpg') }}" alt="Interior View">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/lifecube-detail3.jpg') }}" alt="Safety Features">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Advanced Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Smart Control System</h3>
+                        <p>Advanced touchscreen interface with real-time temperature monitoring and automatic safety protocols.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-fan"></i>
+                        <h3>Electric Cooling</h3>
+                        <p>Environmentally friendly electric cooling system eliminates the need for liquid nitrogen.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-door-open"></i>
+                        <h3>Spacious Design</h3>
+                        <p>Comfortable chamber space with emergency exit system and anti-panic button.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="specs-section">
+        <div class="container">
+            <h2 class="section-title">Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h4>Dimensions</h4>
+                    <p>2.3m x 1.8m x 2.4m (HxWxD)</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Temperature Range</h4>
+                    <p>-80°C to -110°C</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Power Requirements</h4>
+                    <p>380V/3-phase, 32A</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Treatment Time</h4>
+                    <p>1-3 minutes per session</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-section">
+        <div class="container">
+            <h2 class="section-title">Business Potential</h2>
+            <div class="roi-calculator">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label>Sessions per Day</label>
+                        <input type="number" id="sessionsPerDay" value="10">
+                    </div>
+                    <div class="input-group">
+                        <label>Price per Session ($)</label>
+                        <input type="number" id="pricePerSession" value="65">
+                    </div>
+                    <div class="input-group">
+                        <label>Operating Days per Month</label>
+                        <input type="number" id="daysPerMonth" value="26">
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-item">
+                        <h4>Monthly Revenue Potential</h4>
+                        <p id="monthlyRevenue">$16,900</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Annual Revenue Potential</h4>
+                        <p id="annualRevenue">$202,800</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Join the future of wellness technology with LifeCube Cryotherapy</p>
+                <div class="cta-buttons">
+                    <button class="primary-btn" onclick="location.href='{{ url_for('request_quote') }}'">Request Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='product_detail.js') }}"></script>
+</body>
+</html>

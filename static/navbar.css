@@ -9,9 +9,9 @@
 }
 /* ===== Colours ===== */
 :root {
-  --body-color: #e4e9f7;
+  --body-color: #dae8ea;
   --nav-color: #dae8ea;
-  --side-nav: #010718;
+  --side-nav: #dae8ea;
   --text-color: #109299;
   --search-bar: #f2f2f2;
   --search-text: #010718;
@@ -224,8 +224,8 @@ body.dark .search-field i {
 }
 /* Add this to your style section */
 .gradient-btn {
-  padding: 15px 30px;
-  font-size: 18px;
+  padding: clamp(10px, 2vw, 15px) clamp(20px, 3vw, 30px);
+  font-size: clamp(14px, 2vw, 18px);
   border: none;
   border-radius: 50px;
   color: white;
@@ -233,10 +233,10 @@ body.dark .search-field i {
   background-size: 200% auto;
   transition: 0.5s ease;
   background-image: linear-gradient(
-    to right,
-    #109299 0%,
-    #1fb5bd 51%,
-    #109299 100%
+      to right,
+      #109299 0%,
+      #1fb5bd 51%,
+      #109299 100%
   );
   box-shadow: 0 4px 15px rgba(16, 146, 153, 0.2);
 }
@@ -256,43 +256,81 @@ body.dark .search-field i {
 @media (max-width: 790px) {
   nav .nav-bar .sidebarOpen {
     display: block;
+    font-size: 30px; /* Make hamburger icon bigger */
+    padding: 10px;   /* Add more touch area */
   }
+  
   .menu {
     position: fixed;
     height: 100%;
-    width: 320px;
+    width: 100%;    /* Make menu full width on mobile */
     left: -100%;
     top: 0;
     padding: 20px;
+    background-color: var(--nav-color);
+    z-index: 100;
+    transition: all 0.4s ease;
+  }
+
+  nav.active .menu {
+    left: 0;        /* Ensure menu comes fully into view */
+  }
+
+  .menu .logo-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-toggle .siderbarClose {
+    color: var(--text-color);
+    font-size: 30px;  /* Make close button bigger */
+    cursor: pointer;
+    padding: 10px;    /* Add more touch area */
+  }
+}
+
+@media (max-width: 790px) {
+  .nav-bar .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .nav-bar .nav-links li {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 15px 0;
+    font-size: 20px;
+    color: #109299;
+  }
+
+  .menu {
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    left: -100%;
+    top: 0;
+    padding: 40px 20px;
     background-color: var(--side-nav);
     z-index: 100;
     transition: all 0.4s ease;
   }
-  nav.active .menu {
-    left: -0%;
+
+  .logo-toggle {
+    margin-bottom: 30px;
   }
-  nav.active .nav-bar .navLogo a {
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-  .menu .logo-toggle {
-    display: block;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo-toggle .siderbarClose {
-    color: var(--text-color);
-    font-size: 24px;
-    cursor: pointer;
-  }
-  .nav-bar .nav-links {
-    flex-direction: column;
-    padding-top: 30px;
-  }
-  .nav-links li a {
-    display: block;
-    margin-top: 20px;
-  }
+  .darkLight-searchBox {
+    margin-left: auto;
+}
+
+.btn-survey {
+    margin: 5px;
+    white-space: nowrap;
+}
 }

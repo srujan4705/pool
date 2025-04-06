@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Light Therapy Device | The Wellness Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='product_detail.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Red Light Therapy Device</h1>
+                    <p class="hero-subtitle">Professional-Grade Light Therapy Solution</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Optimal Wavelengths</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-dna"></i>
+                            <span>Cellular Regeneration</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wind"></i>
+                            <span>Built-in Cooling</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="{{ url_for('static', filename='images/redlight-hero.jpg') }}" alt="Red Light Therapy Device">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Description -->
+    <section class="description-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="description-content">
+                        <h2 class="section-title">About Red Light Therapy</h2>
+                        <p class="description-text">
+                            Our professional-grade red light therapy panels deliver optimal wavelengths between 630-850nm for maximum therapeutic benefits. Designed for both clinical and spa settings, these panels provide powerful cellular regeneration and skin rejuvenation capabilities.
+                        </p>
+                        <p class="description-text">
+                            The modular design allows for customizable treatment areas, while the built-in cooling system ensures extended operation without performance degradation. Each panel features medical-grade LED technology for consistent and effective treatments.
+                        </p>
+                        <div class="key-benefits">
+                            <h3>Key Benefits</h3>
+                            <ul>
+                                <li>Enhanced skin collagen production</li>
+                                <li>Improved wound healing and recovery</li>
+                                <li>Reduced inflammation and joint pain</li>
+                                <li>Increased cellular energy and metabolism</li>
+                                <li>Better muscle recovery and performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item main">
+                    <img src="{{ url_for('static', filename='images/redlight-main.jpg') }}" alt="Red Light Panel Main View">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/redlight-detail1.jpg') }}" alt="LED Array">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/redlight-detail2.jpg') }}" alt="Control Interface">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/redlight-detail3.jpg') }}" alt="Treatment Application">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Advanced Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Smart Control System</h3>
+                        <p>Digital control panel with preset programs and customizable settings.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Modular Design</h3>
+                        <p>Expandable panel system for various treatment area sizes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-fan"></i>
+                        <h3>Active Cooling</h3>
+                        <p>Advanced cooling system for extended operation and LED longevity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="specs-section">
+        <div class="container">
+            <h2 class="section-title">Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h4>Wavelength Range</h4>
+                    <p>630-850nm</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Power Output</h4>
+                    <p>100mW/cm²</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Treatment Time</h4>
+                    <p>10-20 minutes</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Panel Size</h4>
+                    <p>60cm x 40cm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-section">
+        <div class="container">
+            <h2 class="section-title">Business Potential</h2>
+            <div class="roi-calculator">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label>Sessions per Day</label>
+                        <input type="number" id="sessionsPerDay" value="12">
+                    </div>
+                    <div class="input-group">
+                        <label>Price per Session ($)</label>
+                        <input type="number" id="pricePerSession" value="75">
+                    </div>
+                    <div class="input-group">
+                        <label>Operating Days per Month</label>
+                        <input type="number" id="daysPerMonth" value="26">
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-item">
+                        <h4>Monthly Revenue Potential</h4>
+                        <p id="monthlyRevenue">$23,400</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Annual Revenue Potential</h4>
+                        <p id="annualRevenue">$280,800</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Join the future of light therapy with our professional-grade devices</p>
+                <div class="cta-buttons">
+                    <button class="primary-btn" onclick="location.href='{{ url_for('request_quote') }}'">Request Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='product_detail.js') }}"></script>
+</body>
+</html>

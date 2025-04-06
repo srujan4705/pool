@@ -1,0 +1,99 @@
+.quote-section {
+    padding: 100px 0;
+    background: #f5f7f7;
+}
+
+.quote-form-container {
+    background: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-title {
+    font-size: 48px;
+    font-family: 'Cormorant Garamond', serif;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.form-section {
+    margin-bottom: 40px;
+}
+
+.form-section h3 {
+    color: #109299;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #109299;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: #109299;
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: #0d7f85;
+    transform: translateY(-3px);
+}
+
+.form-actions {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .quote-form-container {
+        padding: 30px;
+    }
+
+    .form-title {
+        font-size: 36px;
+    }
+}

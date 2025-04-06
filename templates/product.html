@@ -18,7 +18,7 @@
       
       .product-section {
         padding: 80px 0;
-        background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+        background: linear-gradient(to right, #0a666b, #109299, #1fb5bd);
         color: white;
         margin-top: 100px;
       }
@@ -228,43 +228,79 @@
       
       <div class="product-carousel-container">
         <div class="product-carousel">
+          <!-- Cryotherapy Chamber -->
           <div class="product active">
             <div class="product-image-container">
-              <img src="static/prod1.jpg" alt="Cryotherapy Chamber" class="product-image" />
+              <img src="{{ url_for('static', filename='images/lifecube-main.jpg') }}" alt="Cryotherapy Chamber" class="product-image" />
             </div>
             <div class="product-details">
-              <h2>The Ultimate Cryotherapy Solution</h2>
-              <p>Cryosessions are taking the wellness industry by storm, offering clients a cutting-edge way to enhance their health and appearance. By incorporating whole-body cryotherapy into your business—whether it's a wellness center, gym, or beauty studio—you can attract new customers and boost your revenue.</p>
-              <div class="product-price">$12,999</div>
-              <a href="#" class="product-btn">Learn More</a>
+              <h2>LifeCube Cryotherapy Chamber</h2>
+              <p>Experience the future of wellness with our advanced cryotherapy chamber. Featuring electric cooling technology, smart control systems, and comprehensive safety features, the LifeCube delivers exceptional results for your clients while maximizing your business potential.</p>
+              <a href="{{ url_for('product_cryo') }}" class="product-btn">Learn More</a>
             </div>
           </div>
           
+          <!-- IQ Body Device -->
           <div class="product">
             <div class="product-image-container">
-              <img src="static/prod2.jpg" alt="Hyperbaric Chamber" class="product-image" />
+              <img src="{{ url_for('static', filename='images/iqbody-main.jpg') }}" alt="IQ Body Device" class="product-image" />
             </div>
             <div class="product-details">
-              <h2>Advanced Hyperbaric Chamber</h2>
-              <p>Our state-of-the-art hyperbaric chamber provides a unique therapeutic experience, promoting faster recovery and improved health. Ideal for athletes, wellness enthusiasts, and medical facilities looking to expand their treatment options.</p>
-              <div class="product-price">$15,499</div>
-              <a href="#" class="product-btn">Learn More</a>
+              <h2>IQ Body Device</h2>
+              <p>Advanced cryolipolysis technology with six smooth and curved cold plates. Perfect for both active cold applications and passive treatments, offering versatile solutions for body contouring and wellness treatments.</p>
+              <a href="{{ url_for('product_iqbody') }}" class="product-btn">Learn More</a>
             </div>
           </div>
           
+          <!-- Red Light Therapy Device -->
           <div class="product">
             <div class="product-image-container">
-              <img src="static/prod3.jpg" alt="Red Light Therapy Device" class="product-image" />
+              <img src="{{ url_for('static', filename='images/redlight-main.jpg') }}" alt="Red Light Therapy Device" class="product-image" />
             </div>
             <div class="product-details">
               <h2>Red Light Therapy Device</h2>
-              <p>Experience the benefits of red light therapy with our advanced device, designed to rejuvenate skin, reduce inflammation, and enhance overall wellness. Perfect for spas, clinics, and home use, our device delivers professional-grade results.</p>
-              <div class="product-price">$3,299</div>
-              <a href="#" class="product-btn">Learn More</a>
+              <p>Professional-grade red light therapy panels delivering optimal wavelengths for maximum therapeutic benefits. Features modular design, advanced cooling system, and medical-grade LED technology.</p>
+              <a href="{{ url_for('product_redlight') }}" class="product-btn">Learn More</a>
+            </div>
+          </div>
+
+          <!-- EMS Training System -->
+          <div class="product">
+            <div class="product-image-container">
+              <img src="{{ url_for('static', filename='images/ems-main.jpg') }}" alt="EMS Training System" class="product-image" />
+            </div>
+            <div class="product-details">
+              <h2>EMS Training System</h2>
+              <p>Next-generation fitness technology featuring wireless operation and targeted muscle activation. Complete with full-body EMS suit and smart control system for efficient, personalized training sessions.</p>
+              <a href="{{ url_for('product_ems') }}" class="product-btn">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Hyperbaric Chamber -->
+          <div class="product">
+            <div class="product-image-container">
+              <img src="{{ url_for('static', filename='images/hyperbaric-main.jpg') }}" alt="Hyperbaric Chamber" class="product-image" />
+            </div>
+            <div class="product-details">
+              <h2>Hyperbaric Chamber</h2>
+              <p>Medical-grade hyperbaric oxygen therapy chamber with advanced pressure control systems. Features spacious design, climate control, and comprehensive safety features for optimal treatment experience.</p>
+              <a href="{{ url_for('product_hyperbaric') }}" class="product-btn">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Far Infrared Sauna -->
+          <div class="product">
+            <div class="product-image-container">
+              <img src="{{ url_for('static', filename='images/infrared-main.jpg') }}" alt="Far Infrared Sauna" class="product-image" />
+            </div>
+            <div class="product-details">
+              <h2>Far Infrared Sauna</h2>
+              <p>Premium far infrared sauna featuring advanced ceramic-carbon heating technology. Built with Canadian Hemlock wood and equipped with low EMF heating system, entertainment features, and smart controls.</p>
+              <a href="{{ url_for('product_infrared') }}" class="product-btn">Learn More</a>
             </div>
           </div>
         </div>
-        
+
         <div class="carousel-controls">
           <button class="carousel-arrow" onclick="prevProduct()">&#10094;</button>
           <button class="carousel-arrow" onclick="nextProduct()">&#10095;</button>
@@ -274,6 +310,9 @@
           <span class="dot active" onclick="showProduct(0)"></span>
           <span class="dot" onclick="showProduct(1)"></span>
           <span class="dot" onclick="showProduct(2)"></span>
+          <span class="dot" onclick="showProduct(3)"></span>
+          <span class="dot" onclick="showProduct(4)"></span>
+          <span class="dot" onclick="showProduct(5)"></span>
         </div>
       </div>
     </section>

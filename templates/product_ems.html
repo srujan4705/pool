@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS Training System | The Wellness Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='product_detail.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">EMS Training System</h1>
+                    <p class="hero-subtitle">Next-Generation Fitness Technology</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Wireless Technology</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Full Body Training</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-tablet-alt"></i>
+                            <span>Smart Controls</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="{{ url_for('static', filename='images/ems-hero.jpg') }}" alt="EMS Training System">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Description -->
+    <section class="description-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="description-content">
+                        <h2 class="section-title">About EMS Training</h2>
+                        <p class="description-text">
+                            Our state-of-the-art Electrical Muscle Stimulation (EMS) system represents the future of fitness training. This wireless system delivers targeted electrical impulses to specific muscle groups, enabling highly efficient workouts that can achieve in 20 minutes what would typically take 90 minutes in a conventional gym.
+                        </p>
+                        <p class="description-text">
+                            The system includes a full-body EMS suit with 10 pairs of electrodes targeting major muscle groups, a wireless control tablet, and comprehensive training protocols designed for different fitness goals and experience levels.
+                        </p>
+                        <div class="key-benefits">
+                            <h3>Key Benefits</h3>
+                            <ul>
+                                <li>Time-efficient workouts (20-minute sessions)</li>
+                                <li>Targeted muscle activation</li>
+                                <li>Low impact on joints</li>
+                                <li>Customizable training programs</li>
+                                <li>Suitable for all fitness levels</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item main">
+                    <img src="{{ url_for('static', filename='images/ems-main.jpg') }}" alt="EMS System Main View">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/ems-detail1.jpg') }}" alt="EMS Suit">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/ems-detail2.jpg') }}" alt="Control Tablet">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/ems-detail3.jpg') }}" alt="Training Session">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Advanced Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-wifi"></i>
+                        <h3>Wireless Freedom</h3>
+                        <p>Complete wireless operation for unrestricted movement during training sessions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-sliders-h"></i>
+                        <h3>Precise Control</h3>
+                        <p>Individual intensity control for each muscle group via intuitive tablet interface.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Multi-User System</h3>
+                        <p>Support for multiple user profiles with progress tracking and customized programs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="specs-section">
+        <div class="container">
+            <h2 class="section-title">Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h4>Electrode Pairs</h4>
+                    <p>10 Pairs</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Battery Life</h4>
+                    <p>8-10 Hours</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Session Duration</h4>
+                    <p>20 Minutes</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Wireless Range</h4>
+                    <p>Up to 10m</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-section">
+        <div class="container">
+            <h2 class="section-title">Business Potential</h2>
+            <div class="roi-calculator">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label>Sessions per Day</label>
+                        <input type="number" id="sessionsPerDay" value="15">
+                    </div>
+                    <div class="input-group">
+                        <label>Price per Session ($)</label>
+                        <input type="number" id="pricePerSession" value="85">
+                    </div>
+                    <div class="input-group">
+                        <label>Operating Days per Month</label>
+                        <input type="number" id="daysPerMonth" value="26">
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-item">
+                        <h4>Monthly Revenue Potential</h4>
+                        <p id="monthlyRevenue">$33,150</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Annual Revenue Potential</h4>
+                        <p id="annualRevenue">$397,800</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Join the future of fitness training with our EMS system</p>
+                <div class="cta-buttons">
+                    <button class="primary-btn" onclick="location.href='{{ url_for('request_quote') }}'">Request Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='product_detail.js') }}"></script>
+</body>
+</html>

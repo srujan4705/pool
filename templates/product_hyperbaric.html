@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperbaric Chamber | The Wellness Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='product_detail.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Hyperbaric Chamber</h1>
+                    <p class="hero-subtitle">Advanced Oxygen Therapy Solution</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-compress-alt"></i>
+                            <span>2.0 ATA Pressure</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Medical-Grade Safety</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-couch"></i>
+                            <span>Spacious Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="{{ url_for('static', filename='images/hyperbaric-hero.jpg') }}" alt="Hyperbaric Chamber">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Description -->
+    <section class="description-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="description-content">
+                        <h2 class="section-title">About Hyperbaric Oxygen Therapy</h2>
+                        <p class="description-text">
+                            Our medical-grade hyperbaric chamber delivers concentrated oxygen therapy at pressures up to 2.0 ATA, promoting enhanced healing and recovery. The chamber features state-of-the-art pressure control systems and safety features for reliable operation.
+                        </p>
+                        <p class="description-text">
+                            The spacious interior accommodates comfortable treatment sessions, while the transparent design helps reduce anxiety and claustrophobia. Advanced air filtration and climate control systems ensure optimal treatment conditions.
+                        </p>
+                        <div class="key-benefits">
+                            <h3>Key Benefits</h3>
+                            <ul>
+                                <li>Enhanced wound healing</li>
+                                <li>Improved recovery from injuries</li>
+                                <li>Increased stem cell production</li>
+                                <li>Better brain function and neuroplasticity</li>
+                                <li>Reduced inflammation and oxidative stress</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item main">
+                    <img src="{{ url_for('static', filename='images/hyperbaric-main.jpg') }}" alt="Hyperbaric Chamber Main View">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/hyperbaric-detail1.jpg') }}" alt="Control Panel">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/hyperbaric-detail2.jpg') }}" alt="Interior View">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/hyperbaric-detail3.jpg') }}" alt="Treatment Session">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Advanced Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-digital-tachograph"></i>
+                        <h3>Precision Controls</h3>
+                        <p>Advanced digital monitoring and control system for precise pressure management.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-wind"></i>
+                        <h3>Climate Control</h3>
+                        <p>Integrated temperature and humidity control for optimal comfort.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Safety Systems</h3>
+                        <p>Multiple safety features including emergency pressure release and communication system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="specs-section">
+        <div class="container">
+            <h2 class="section-title">Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h4>Chamber Size</h4>
+                    <p>2.3m x 0.9m</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Max Pressure</h4>
+                    <p>2.0 ATA</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Session Duration</h4>
+                    <p>60-90 minutes</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Power Supply</h4>
+                    <p>220V/50Hz</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-section">
+        <div class="container">
+            <h2 class="section-title">Business Potential</h2>
+            <div class="roi-calculator">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label>Sessions per Day</label>
+                        <input type="number" id="sessionsPerDay" value="8">
+                    </div>
+                    <div class="input-group">
+                        <label>Price per Session ($)</label>
+                        <input type="number" id="pricePerSession" value="200">
+                    </div>
+                    <div class="input-group">
+                        <label>Operating Days per Month</label>
+                        <input type="number" id="daysPerMonth" value="26">
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-item">
+                        <h4>Monthly Revenue Potential</h4>
+                        <p id="monthlyRevenue">$41,600</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Annual Revenue Potential</h4>
+                        <p id="annualRevenue">$499,200</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Join the future of wellness with hyperbaric oxygen therapy</p>
+                <div class="cta-buttons">
+                    <button class="primary-btn" onclick="location.href='{{ url_for('request_quote') }}'">Request Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='product_detail.js') }}"></script>
+</body>
+</html>

@@ -3,31 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Whole Body Cryotherapy | The Wellness Co</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <!-- Add navbar CSS -->
+    <title>EMS Training | The Wellness Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='therapy.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='indi_therapy.css') }}"
-    />
-    
-    
+    <link rel="stylesheet" href="{{ url_for('static', filename='therapy.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='indi_therapy.css') }}" />
   </head>
   <body>
     {% include 'navbar.html' %}
@@ -37,10 +19,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-            <h1 class="hero-title">What is Whole Body Cryotherapy?</h1>
+            <h1 class="hero-title">What is EMS Training?</h1>
             <p class="hero-subtitle">
-              Discover the chill that heals. Restart, recharge, and refresh your
-              mind & body in just 3 minutes!
+              Experience the future of fitness with Electrical Muscle Stimulation. Achieve maximum results in minimum time with this revolutionary training method!
             </p>
           </div>
         </div>
@@ -52,7 +33,7 @@
       <div class="container">
         <div class="video-container">
           <video width="100%" controls>
-            <source src="How Does Cryotherapy Work_.mp4" type="video/mp4">
+            <source src="How Does EMS Training Work.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -69,30 +50,23 @@
               <div class="section-counter">01</div>
             </div>
             <div class="col-lg-5">
-              <h2 class="section-title">Dare to Freeze</h2>
+              <h2 class="section-title">Power of EMS</h2>
               <div class="section-content">
                 <ul>
                   <li>
-                    Exposes your body to -100°C to -140°C temperatures for a
-                    total of 3 to 4 minutes.
+                    20 minutes of EMS training equals 90 minutes of conventional workout
                   </li>
                   <li>
-                    Boosts circulation, reduces cortisol levels + oxidative
-                    stress, and releases energy boosting endorphins.
+                    Activates up to 90% of muscle fibers simultaneously
                   </li>
                   <li>
-                    Reduces inflammation, promotes muscle recovery, and boosts
-                    metabolism.
+                    Low-impact, joint-friendly training suitable for all fitness levels
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-lg-5">
-              <img
-                src="{{ url_for('static', filename='static\dare.jpeg') }}"
-                alt="Cryotherapy Treatment"
-                class="section-image"
-              />
+              <img src="{{ url_for('static', filename='static/ems1.jpg') }}" alt="EMS Training" class="section-image" />
             </div>
           </div>
         </div>
@@ -104,28 +78,18 @@
               <div class="section-counter">02</div>
             </div>
             <div class="col-lg-5">
-              <h2 class="section-title">The Science Behind the Chill</h2>
+              <h2 class="section-title">The Science Behind EMS</h2>
               <div class="section-content">
                 <p>
-                  Whole Body Cryotherapy works by triggering the body's natural
-                  healing mechanisms. When exposed to extreme cold, blood
-                  vessels constrict, reducing blood flow to the extremities and
-                  redirecting it to vital organs.
+                  EMS Training uses electrical impulses to stimulate multiple muscle groups simultaneously. These impulses mimic the natural action of your central nervous system, causing muscles to contract.
                 </p>
                 <p>
-                  Once you exit the chamber, oxygenated blood rushes back to
-                  peripheral tissues, delivering nutrients and removing toxins.
-                  This process, known as vasoconstriction followed by
-                  vasodilation, is what creates the therapeutic effects.
+                  The technology allows for deeper and more intense muscle contractions than conventional exercise, leading to more efficient workouts and faster results.
                 </p>
               </div>
             </div>
             <div class="col-lg-5">
-              <img
-                src="{{ url_for('static', filename='static/oxygen') }}"
-                alt="Cryotherapy Science"
-                class="section-image"
-              />
+              <img src="{{ url_for('static', filename='static/ems2.jpg') }}" alt="EMS Science" class="section-image" />
             </div>
           </div>
         </div>
@@ -139,26 +103,20 @@
             <div class="col-lg-5">
               <h2 class="section-title">Benefits You'll Experience</h2>
               <div class="section-content">
-                <p>
-                  Regular cryotherapy sessions can provide numerous benefits:
-                </p>
+                <p>Regular EMS training sessions provide numerous benefits:</p>
                 <ul>
-                  <li>Reduced inflammation and pain</li>
-                  <li>Accelerated muscle recovery</li>
-                  <li>Improved energy and mood</li>
-                  <li>Enhanced skin appearance</li>
-                  <li>Boosted metabolism and calorie burning</li>
-                  <li>Improved sleep quality</li>
-                  <li>Strengthened immune system</li>
+                  <li>Increased muscle strength and tone</li>
+                  <li>Enhanced metabolic rate and fat burning</li>
+                  <li>Improved posture and core stability</li>
+                  <li>Reduced cellulite appearance</li>
+                  <li>Time-efficient workouts</li>
+                  <li>Joint-friendly exercise alternative</li>
+                  <li>Better muscle definition</li>
                 </ul>
               </div>
             </div>
             <div class="col-lg-5">
-              <img
-                src="static"
-                alt="Cryotherapy Benefits"
-                class="section-image"
-              />
+              <img src="{{ url_for('static', filename='static/ems3.jpg') }}" alt="EMS Benefits" class="section-image" />
             </div>
           </div>
         </div>
@@ -172,34 +130,20 @@
             <div class="col-lg-5">
               <h2 class="section-title">What to Expect</h2>
               <div class="section-content">
-                <p>Your cryotherapy session will be brief but invigorating:</p>
+                <p>Your EMS training session will be efficient and effective:</p>
                 <ol>
-                  <li>
-                    You'll change into provided protective gear (gloves, socks,
-                    slippers)
-                  </li>
-                  <li>
-                    Enter the chamber, which will cool rapidly to between -100°C
-                    and -140°C
-                  </li>
-                  <li>
-                    Remain in the chamber for 2-3 minutes while a technician
-                    guides you
-                  </li>
-                  <li>Exit feeling energized and refreshed</li>
+                  <li>Change into our special EMS training suit</li>
+                  <li>Brief warm-up to prepare your muscles</li>
+                  <li>20-minute guided workout with your personal trainer</li>
+                  <li>Cool-down and stretching</li>
                 </ol>
                 <p>
-                  The entire process takes less than 10 minutes, making it easy
-                  to fit into your busy schedule.
+                  The entire session takes just 30 minutes, perfect for busy schedules.
                 </p>
               </div>
             </div>
             <div class="col-lg-5">
-              <img
-                src="{{ url_for('static', filename='images/cryo-section4.jpg') }}"
-                alt="Cryotherapy Experience"
-                class="section-image"
-              />
+              <img src="{{ url_for('static', filename='static/ems4.jpg') }}" alt="EMS Experience" class="section-image" />
             </div>
           </div>
         </div>
@@ -210,19 +154,18 @@
     <section class="benefits-section">
       <div class="container">
         <h2 class="section-title text-center mb-5">
-          Why Choose Our Cryotherapy
+          Why Choose Our EMS Training
         </h2>
         <div class="row">
           <div class="col-md-6">
             <div class="benefit-item">
               <div class="benefit-icon">
-                <i class="fas fa-shield-alt"></i>
+                <i class="fas fa-dumbbell"></i>
               </div>
               <div class="benefit-content">
                 <h4>State-of-the-Art Equipment</h4>
                 <p>
-                  Our cryotherapy chambers are the most advanced fully-electric
-                  systems available, designed and manufactured in Germany.
+                  Latest German EMS technology for safe and effective training.
                 </p>
               </div>
             </div>
@@ -233,10 +176,9 @@
                 <i class="fas fa-user-md"></i>
               </div>
               <div class="benefit-content">
-                <h4>Expert Supervision</h4>
+                <h4>Certified Trainers</h4>
                 <p>
-                  All sessions are monitored by trained professionals who ensure
-                  your safety and comfort throughout the experience.
+                  Expert guidance from EMS-certified personal trainers.
                 </p>
               </div>
             </div>
@@ -244,13 +186,12 @@
           <div class="col-md-6">
             <div class="benefit-item">
               <div class="benefit-icon">
-                <i class="fas fa-wind"></i>
+                <i class="fas fa-clock"></i>
               </div>
               <div class="benefit-content">
-                <h4>Nitrogen-Free Technology</h4>
+                <h4>Time-Efficient</h4>
                 <p>
-                  Our electric chambers eliminate exposure to nitrogen and other
-                  harmful gases, providing a safer experience.
+                  Complete workout in just 20 minutes, twice a week.
                 </p>
               </div>
             </div>
@@ -263,8 +204,7 @@
               <div class="benefit-content">
                 <h4>Personalized Programs</h4>
                 <p>
-                  We offer customized treatment plans based on your specific
-                  health goals and needs.
+                  Customized training plans to meet your fitness goals.
                 </p>
               </div>
             </div>
@@ -276,12 +216,11 @@
     <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
-        <h2 class="cta-title">Ready to Experience the Chill?</h2>
+        <h2 class="cta-title">Ready to Transform Your Training?</h2>
         <p class="cta-subtitle">
-          Book your first cryotherapy session today and discover the
-          transformative benefits for yourself.
+          Book your first EMS training session today and experience the future of fitness.
         </p>
-        <button class="cta-button" onclick="window.location.href='{{ url_for('booking') }}'">Book Your Appointment</button>
+        <button class="cta-button" onclick="window.location.href='{{ url_for('booking') }}'">Book Your Session</button>
       </div>
     </section>
 
@@ -289,10 +228,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Intersection Observer for scroll animations
       document.addEventListener("DOMContentLoaded", function () {
         const contentBlocks = document.querySelectorAll(".content-block");
-
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -306,7 +243,6 @@
             threshold: 0.2,
           }
         );
-
         contentBlocks.forEach((block) => {
           observer.observe(block);
         });

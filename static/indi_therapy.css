@@ -1,0 +1,200 @@
+body {
+    font-family: "Arial", sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  /* Animation */
+  .fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  /* Hero Section */
+  .hero-section {
+    background-color: #dae8ea;
+    padding: 120px 0 80px;
+    position: relative;
+  }
+
+  .hero-title {
+    font-size: 64px;
+    font-family: "Cormorant Garamond", serif;
+    color: #000;
+    margin-bottom: 30px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    color: #333;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  /* Video Section */
+  .video-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-container video {
+display: block;
+width: 100%;
+height: auto;
+}
+
+  /* Content Section */
+  .content-section {
+    padding: 80px 0;
+    position: relative;
+    background-color: #e9f0f1;
+  }
+
+  .section-counter {
+    position: sticky;
+    top: 100px;
+    font-size: 120px;
+    color: #a8e8f0;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-family: "Cormorant Garamond", serif;
+    margin-bottom: 30px;
+    color: #109299;
+    font-weight: 400;
+  }
+
+  .section-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .section-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .content-block {
+    margin-bottom: 120px;
+  }
+
+  .content-block:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Benefits Section */
+  .benefits-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+  }
+
+  .benefit-item {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  .benefit-icon {
+    font-size: 24px;
+    color: #109299;
+    margin-right: 20px;
+  }
+
+  .benefit-content h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .benefit-content p {
+    font-size: 16px;
+    color: #666;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background-color: #109299;
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-title {
+    font-size: 36px;
+    font-family: "Cormorant Garamond", serif;
+    margin-bottom: 20px;
+  }
+
+  .cta-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-button {
+    background-color: white;
+    color: #109299;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    .hero-title {
+      font-size: 48px;
+    }
+
+    .section-counter {
+      position: relative;
+      top: 0;
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+
+    .content-block {
+      margin-bottom: 80px;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

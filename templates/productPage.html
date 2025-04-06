@@ -214,7 +214,10 @@
                             <p class="product-highlight">
                                 LifeCube's Cryo Chambers are the most advanced fully-electric cryotherapy chambers in the world. They are designed and made in Germany, featuring zero exposure to nitrogen & other harmful gases.
                             </p>
-                            <button class="cta-button">Learn More</button>
+                            <!-- Change this -->
+                            <!-- ... existing code ... -->
+                            <a href="{{ url_for('product_cryo') }}" class="cta-button" style="display: inline-block; text-decoration: none;">Learn More</a>
+<!-- ... existing code ... -->
                         </div>
                     </div>
                 </div>
@@ -234,13 +237,109 @@
                             <p class="product-description">
                                 This innovative cooling device takes cryolipolysis to the next level. Pamper your customers with an active cold application on their face and body, or spread the six smooth and curved cold plates over your customers' problem areas for a relaxing passive application.
                             </p>
-                            <button class="cta-button">Learn More</button>
+                            <a href="{{ url_for('product_iqbody') }}" class="cta-button" style="display: inline-block; text-decoration: none;">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Add more products in the same format -->
+            <div class="product-item">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="product-media">
+                            <img src="{{ url_for('static', filename='images/redlight-device.jpg') }}" alt="Red Light Therapy Device" class="product-image">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="product-content">
+                            <img src="{{ url_for('static', filename='images/redlight-logo.png') }}" alt="Red Light Device Logo" class="brand-logo">
+                            <p class="product-description">
+                                Professional-grade red light therapy panels featuring optimal wavelengths (630-850nm) for maximum therapeutic benefits. Our panels are designed for both clinical and spa settings, providing powerful cellular regeneration and skin rejuvenation capabilities.
+                            </p>
+                            <p class="product-highlight">
+                                Features medical-grade LED technology, modular design for customizable treatment areas, and built-in cooling system for extended operation.
+                            </p>
+                            <a href="{{ url_for('product_redlight') }}" class="cta-button" style="display: inline-block; text-decoration: none;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EMS Training System -->
+            <div class="product-item">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-6">
+                        <div class="product-media">
+                            <img src="{{ url_for('static', filename='images/ems-device.jpg') }}" alt="EMS Training System" class="product-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="product-content">
+                            <img src="{{ url_for('static', filename='images/ems-logo.png') }}" alt="EMS System Logo" class="brand-logo">
+                            <p class="product-description">
+                                State-of-the-art Electrical Muscle Stimulation system with wireless technology and multiple training programs. Perfect for fitness centers and wellness clinics looking to offer cutting-edge training solutions.
+                            </p>
+                            <p class="product-highlight">
+                                Includes full-body EMS suit, wireless control tablet, and comprehensive training protocols for different fitness goals.
+                            </p>
+                            <a href="{{ url_for('product_ems') }}" class="cta-button" style="display: inline-block; text-decoration: none;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hyperbaric Chamber -->
+            <div class="product-item">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="product-media">
+                            <img src="{{ url_for('static', filename='images/hyperbaric-chamber.jpg') }}" alt="Hyperbaric Chamber" class="product-image">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="product-content">
+                            <img src="{{ url_for('static', filename='images/hyperbaric-logo.png') }}" alt="Hyperbaric Chamber Logo" class="brand-logo">
+                            <p class="product-description">
+                                Advanced hyperbaric oxygen therapy chambers designed for medical and wellness facilities. Features precise pressure control, comfortable interior, and state-of-the-art safety systems.
+                            </p>
+                            <p class="product-highlight">
+                                Includes automated pressure control, emergency release system, and entertainment options for patient comfort during sessions.
+                            </p>
+                            <a href="{{ url_for('product_hyperbaric') }}" class="cta-button" style="display: inline-block; text-decoration: none;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Far Infrared Sauna -->
+            <div class="product-item">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-6">
+                        <div class="product-media">
+                            <img src="{{ url_for('static', filename='images/infrared-sauna.jpg') }}" alt="Far Infrared Sauna" class="product-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="product-content">
+                            <img src="{{ url_for('static', filename='images/infrared-logo.png') }}" alt="Infrared Sauna Logo" class="brand-logo">
+                            <p class="product-description">
+                                Premium far infrared sauna systems featuring advanced carbon fiber heating technology. Perfect for spas, wellness centers, and medical facilities looking to offer superior detoxification and relaxation treatments.
+                            </p>
+                            <p class="product-highlight">
+                                Features low EMF heating panels, chromotherapy lighting, and built-in entertainment system with Bluetooth connectivity.
+                            </p>
+                            <a href="{{ url_for('product_infrared') }}" class="cta-button" style="display: inline-block; text-decoration: none;">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

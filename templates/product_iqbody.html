@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Body Device | The Wellness Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='product_detail.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">IQ Body Device</h1>
+                    <p class="hero-subtitle">Advanced Cryolipolysis Technology</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-snowflake"></i>
+                            <span>Targeted Fat Reduction</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Quick Treatment Time</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-sync"></i>
+                            <span>Multiple Treatment Areas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="{{ url_for('static', filename='images/iqbody-hero.jpg') }}" alt="IQ Body Device">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Description -->
+    <section class="description-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="description-content">
+                        <h2 class="section-title">About IQ Body</h2>
+                        <p class="description-text">
+                            The IQ Body Device represents the latest innovation in non-invasive body contouring technology. Using advanced cryolipolysis technology, this system effectively targets and reduces stubborn fat deposits through controlled cooling.
+                        </p>
+                        <p class="description-text">
+                            With six smooth and curved cold plates, the IQ Body Device offers versatile treatment options for various body areas. The system can be used for both active cold applications on face and body, as well as passive treatments targeting specific problem areas.
+                        </p>
+                        <div class="key-benefits">
+                            <h3>Key Benefits</h3>
+                            <ul>
+                                <li>Non-invasive fat reduction</li>
+                                <li>Multiple treatment areas simultaneously</li>
+                                <li>Comfortable treatment experience</li>
+                                <li>Quick recovery time</li>
+                                <li>Long-lasting results</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item main">
+                    <img src="{{ url_for('static', filename='images/iqbody-main.jpg') }}" alt="IQ Body Main View">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/iqbody-detail1.jpg') }}" alt="Control Panel">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/iqbody-detail2.jpg') }}" alt="Treatment Area">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/iqbody-detail3.jpg') }}" alt="Application Process">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Advanced Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-temperature-low"></i>
+                        <h3>Precision Cooling</h3>
+                        <p>Advanced temperature control system for optimal fat reduction results.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-th-large"></i>
+                        <h3>Multi-Zone Treatment</h3>
+                        <p>Six independent cooling plates for simultaneous multi-area treatments.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-tablet-alt"></i>
+                        <h3>Smart Controls</h3>
+                        <p>Intuitive touchscreen interface with preset and custom treatment programs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="specs-section">
+        <div class="container">
+            <h2 class="section-title">Technical Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h4>Treatment Areas</h4>
+                    <p>6 Independent Zones</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Temperature Range</h4>
+                    <p>-5°C to 5°C</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Session Duration</h4>
+                    <p>30-60 minutes</p>
+                </div>
+                <div class="spec-item">
+                    <h4>Power Supply</h4>
+                    <p>220V/50Hz</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="roi-section">
+        <div class="container">
+            <h2 class="section-title">Business Potential</h2>
+            <div class="roi-calculator">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label>Sessions per Day</label>
+                        <input type="number" id="sessionsPerDay" value="8">
+                    </div>
+                    <div class="input-group">
+                        <label>Price per Session ($)</label>
+                        <input type="number" id="pricePerSession" value="150">
+                    </div>
+                    <div class="input-group">
+                        <label>Operating Days per Month</label>
+                        <input type="number" id="daysPerMonth" value="26">
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-item">
+                        <h4>Monthly Revenue Potential</h4>
+                        <p id="monthlyRevenue">$31,200</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Annual Revenue Potential</h4>
+                        <p id="annualRevenue">$374,400</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Join the future of body contouring with IQ Body</p>
+                <div class="cta-buttons">
+                    <button class="primary-btn" onclick="location.href='{{ url_for('request_quote') }}'">Request Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='product_detail.js') }}"></script>
+</body>
+</html>
